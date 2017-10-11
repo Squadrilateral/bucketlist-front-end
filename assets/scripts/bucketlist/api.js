@@ -26,7 +26,18 @@ const postBucketList = function (data) {
   })
 }
 
+const deleteItem = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/listitems/' + data,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   getBucketList,
-  postBucketList
+  postBucketList,
+  deleteItem
 }

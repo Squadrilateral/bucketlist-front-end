@@ -21,9 +21,26 @@ const onPostBucketList = function (event) {
     .catch(ui.postBucketListFailure)
 }
 
+const getItemId = function (deleteButton) {
+  const elementId = $(deleteButton).parent().parent().attr('data-id')
+  return elementId
+}
+
+const onDeleteItem = function (event) {
+  event.preventDefault()
+  const deleteButton = event.target
+  const data = getItemId(deleteButton)
+  api.deleteItem(data)
+    .then(() => {
+      ui.deleteItemSuccess(deleteButton)
+    })
+    .catch(ui.deleteItemFailure)
+}
+
 const addHandlers = function () {
   // $('#').on('click', onGetBucketList)
   $('#add-listitem').on('submit', onPostBucketList)
+  $('#listcontent').on('click', '.remove-button', onDeleteItem)
 }
 
 module.exports = {

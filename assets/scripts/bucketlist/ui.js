@@ -26,9 +26,19 @@ const postBucketListFailure = function (error) {
   console.error(error)
 }
 
+const deleteItemSuccess = function (deleteButton) {
+  $(deleteButton).parent().parent().remove()
+}
+
+const deleteItemFailure = function (error) {
+  console.error(error)
+}
+
 module.exports = {
   getBucketListSuccess,
   getBucketListFailure,
   postBucketListSuccess,
-  postBucketListFailure
+  postBucketListFailure,
+  deleteItemSuccess,
+  deleteItemFailure
 }
