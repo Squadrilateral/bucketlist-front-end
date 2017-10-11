@@ -10,10 +10,6 @@ const onSignUp = function (event) {
 
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .then(() => {
-      return api.signIn(data)
-    })
-    .then(ui.signInSuccess)
     .catch(ui.signUpFailure)
 }
 
@@ -42,12 +38,12 @@ const onSignOut = function (event) {
     .catch(ui.signOutFailure)
 }
 const clearMessage = function () {
-  $('.message-form').text('')
+  $('#message-form').text('')
 }
 
 const addHandlers = function () {
-  $('.btn-auth').on('click', function () {
-    $('.message-form').text('')
+  $('#account').on('click', function () {
+    $('message-form').text('')
   })
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
