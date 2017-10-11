@@ -1,10 +1,13 @@
 const store = require('../store')
+const showList = require('../templates/listitems.handlebars')
+const api = require('./api')
 
 const getBucketListSuccess = function (data) {
   store.listitems = data.listitems
   console.log('getBucketListSuccess ran')
   console.log('List Items console log ', store.listitems)
-  $('#listcontent').html(store.listitems)
+  const showListHTML = showList({ listitems: store.listitems })
+  $('#listcontent').html(showListHTML)
 }
 
 const getBucketListFailure = function (error) {
@@ -14,6 +17,9 @@ const getBucketListFailure = function (error) {
 const postBucketListSuccess = function (data) {
   console.log('postBucketListSuccess ran')
   console.log(data)
+  api.getBucketList()
+    .then(getBucketListSuccess)
+    .catch(getBucketListFailure)
 }
 
 const postBucketListFailure = function (error) {
