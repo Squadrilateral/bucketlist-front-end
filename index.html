@@ -1,25 +1,136 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>Example</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<head>
+  <title>Bucket List</title>
 
-      <!-- Do not add `script` tags-->
-      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
-    </body>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+  <!-- <div class="header-message">
+  </div> -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- <header> -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+
+    </button>
+      <a class="navbar-brand" href="#">Bucket List</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="btn-sign-up" class="btn-auth" data-toggle="modal" data-target="#modal-sign-up">Sign Up</a></li>
+              <li><a href="#" id="btn-sign-in" class="btn-auth" data-toggle="modal" data-target="#modal-sign-in">Sign In</a></li>
+              <li><a href="#" id="btn-change-password" class="btn-auth" data-toggle="modal" data-target="#modal-change-password">Change Password</a></li>
+              <li><a href="#" id="btn-sign-out" class="">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- <button type="button" id="btn-sign-up" class="btn btn-primary navbar-btn btn-auth" data-toggle="modal" data-target="#modal-sign-up">Sign Up</button>
+          <button type="button" id="btn-sign-in" class="btn btn-primary navbar-btn btn-auth" data-toggle="modal" data-target="#modal-sign-in">Sign In</button>
+          <button type="button" id="btn-change-password" class="btn btn-primary navbar-btn btn-auth" data-toggle="modal" data-target="#modal-change-password">Change Password</button>
+          <button type="button" id="btn-sign-out" class="btn btn-primary navbar-btn">Sign Out</button> -->
+        <!-- </ul> -->
+      </div>
+    </div>
+  </nav>
+  <!-- Modal auth -->
+  <!-- modal sign up -->
+  <div class="modal fade" id="modal-sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="modal-title" id="exampleModalLabel">Sign Up</div>
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <form id="sign-up">
+              <label for="email-address">Email</label>
+              <input id='email-address' class="form-control" type="text" name="credentials[email]" placeholder="Email">
+              <br>
+              <label for='password'>Password</label>
+              <input class="form-control" id="password" type="password" name="credentials[password]" placeholder="Password">
+              <br>
+              <label for="password-confirmation">Password confirmation</label>
+              <input class="form-control" id="password-confirmation" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+              <br>
+              <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign Up">Sign Up</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal in auth -->
+  <div class="modal fade" id="modal-sign-in" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="modal-title" id="exampleModalLabel">Sign In</div>
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <form id="sign-in">
+              <label for="email-address">Email</label>
+              <input class="form-control" id="email-address" type="text" name="credentials[email]" placeholder="Email">
+              <br>
+              <label for='password'>Password</label>
+              <input class="form-control" id="password" type="password" name="credentials[password]" placeholder="Password">
+              <br>
+              <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign In">Sign In</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal change password auth -->
+  <div class="modal fade" id="modal-change-password" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="modal-title" id="exampleModalLabel">Change Password</div>
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <form id="change-password">
+              <label for="old-password">Old Password</label>
+              <input class="form-control" id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
+              <br>
+              <label for="new-password">New Password</label>
+              <input class="form-control" id="new-password" type="password" name="passwords[new]" placeholder="New Password">
+              <br>
+              <button type="submit" class="btn btn-primary pull-right" name="submit" value="Change Password!">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
