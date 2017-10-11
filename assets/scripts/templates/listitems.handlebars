@@ -1,0 +1,10 @@
+{{#each listitems as |listitem|}}
+<ul data-id="{{listitem.id}}">
+  <li>Name: {{listitem.name}}</li>
+  <li>Location: {{listitem.location}}</li>
+  <li>Category: {{listitem.category}}</li>
+  <li>Rating: {{listitem.rating}}</li>
+  <li><button class='remove-button'>Remove</button></li>
+  <li><button class='edit-button'>Edit</button></li>
+</ul>
+{{/each}}

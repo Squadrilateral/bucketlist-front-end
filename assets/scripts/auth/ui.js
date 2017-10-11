@@ -1,6 +1,7 @@
 'use strict'
 const store = require('../store')
-// const listEvents = require('../lists/events')
+const bucketlistEvents = require('../bucketlist/events')
+
 const signUpSuccess = function (data) {
   store.user = data.user
   store.token = data.user.token
@@ -29,7 +30,9 @@ const signInSuccess = function (data) {
   $('#btn-sign-in').hide()
   $('#btn-change-password').show()
   $('#btn-sign-out').show()
+  bucketlistEvents.onGetBucketList()
 }
+
 const signInFailure = function (error) {
   console.error(error)
   $('.message-form').html('Error on sign in')
