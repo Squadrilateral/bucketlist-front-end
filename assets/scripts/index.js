@@ -5,19 +5,18 @@ const config = require('./config')
 
 const store = require('./store')
 const authEvents = require('./auth/events')
-// const listEvents = require('./lists/events')
 
 $(() => {
   setAPIOrigin(location, config)
   $('#btn-change-password').hide()
   $('#btn-sign-out').hide()
+  $('.btn-auth').on('click', function () {
+    $('.message-form').html('')
+  })
 
   store.isSignedIn = false
   $('.create-list-btn').hide()
-  // listEvents.addHandlers()
-  // itemEvents.addHandlers()
   authEvents.addHandlers()
-  $('#examples').show()
 })
 
 // use require with a reference to bundle the file and use it in this file
