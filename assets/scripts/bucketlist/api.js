@@ -36,8 +36,20 @@ const deleteItem = function (data) {
   })
 }
 
+const updateItem = function (elementId, data) {
+  return $.ajax({
+    url: config.apiOrigin + '/listitems/' + elementId,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   getBucketList,
   postBucketList,
-  deleteItem
+  deleteItem,
+  updateItem
 }

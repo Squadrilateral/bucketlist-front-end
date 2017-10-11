@@ -34,11 +34,24 @@ const deleteItemFailure = function (error) {
   console.error(error)
 }
 
+const updateItemSuccess = function (data) {
+  console.log(data)
+  api.getBucketList()
+    .then(getBucketListSuccess)
+    .catch(getBucketListFailure)
+}
+
+const updateItemFailure = function (error) {
+  console.error(error)
+}
+
 module.exports = {
   getBucketListSuccess,
   getBucketListFailure,
   postBucketListSuccess,
   postBucketListFailure,
   deleteItemSuccess,
-  deleteItemFailure
+  deleteItemFailure,
+  updateItemSuccess,
+  updateItemFailure
 }

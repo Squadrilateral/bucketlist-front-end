@@ -3,6 +3,7 @@
 const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
+const store = require('../store')
 
 const onGetBucketList = function () {
   console.log('onGetBucketList ran!')
@@ -21,8 +22,8 @@ const onPostBucketList = function (event) {
     .catch(ui.postBucketListFailure)
 }
 
-const getItemId = function (deleteButton) {
-  const elementId = $(deleteButton).parent().parent().attr('data-id')
+const getItemId = function (button) {
+  const elementId = $(button).parent().parent().attr('data-id')
   return elementId
 }
 
@@ -37,10 +38,29 @@ const onDeleteItem = function (event) {
     .catch(ui.deleteItemFailure)
 }
 
+const getData = function (event) {
+  event.preventDefault()
+  const editButton = event.target
+  store.editedItemId = getItemId(editButton)
+  console.log('elementId data is ', store.editedItemId)
+  $('#edit-listitem').on('submit', onUpdateItem)
+}
+
+const onUpdateItem = function (event) {
+  event.preventDefault()
+  console.log('onUpdateItem ran')
+  const data = getFormFields(this)
+  const elementId = store.editedItemId
+  api.updateItem(elementId, data)
+    .then(ui.updateItemSuccess)
+    .catch(ui.updateItemFailure)
+}
+
 const addHandlers = function () {
   // $('#').on('click', onGetBucketList)
   $('#add-listitem').on('submit', onPostBucketList)
   $('#listcontent').on('click', '.remove-button', onDeleteItem)
+  $('#listcontent').on('click', '.edit-button', getData)
 }
 
 module.exports = {
