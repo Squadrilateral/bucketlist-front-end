@@ -4,11 +4,11 @@ const store = require('../store')
 const signUpSuccess = function (data) {
   store.user = data.user
   store.token = data.user.token
-  $('#modal-sign-up').modal('hide')
+  $('.message-form').html('Successfully signed up. Please log in!')
+  clearForm()
 }
 const signUpFailure = function () {
   $('.message-form').html('Error on sign up')
-  clearForm()
 }
 
 const signInSuccess = function (data) {
@@ -19,14 +19,16 @@ const signInSuccess = function (data) {
   $('#examples').hide()
 
   $('.content').css('display', 'none')
-  // $('.message-form').html('Successfully signed in')
-  $('#modal-sign-in').modal('hide')
-  $('#btn-sign-in').hide()
-  $('#btn-sign-up').hide()
-  $('#btn-change-password').show()
-  $('#btn-sign-out').show()
+  $('.message-form').html('Successfully signed in')
+  $('#account').modal('hide')
   // listEvents.getLists()
   $('.create-list-btn').show()
+  $('#modal-sign-in').modal('hide')
+  $('.message-form').html('')
+  $('#btn-sign-up').hide()
+  $('#btn-sign-in').hide()
+  $('#btn-change-password').show()
+  $('#btn-sign-out').show()
 }
 const signInFailure = function (error) {
   console.error(error)
@@ -48,13 +50,14 @@ const signOutSuccess = function (data) {
   store.user = null
   store.isSignedIn = false
   $('.message-form').html('Successfully signed out')
-  $('#btn-sign-in').show()
-  $('#btn-sign-up').show()
-  $('#btn-change-password').hide()
-  $('#btn-sign-out').hide()
+  $('#account').modal('hide')
   $('.content').hide()
   $('.create-list-btn').hide()
   $('#examples').show()
+  $('#btn-sign-up').show()
+  $('#btn-sign-in').show()
+  $('#btn-change-password').hide()
+  $('#btn-sign-out').hide()
 }
 
 const signOutFailure = function () {
