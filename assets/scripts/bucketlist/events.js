@@ -2,6 +2,7 @@
 
 const api = require('./api')
 const ui = require('./ui')
+const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetBucketList = function () {
   console.log('onGetBucketList ran!')
@@ -10,15 +11,19 @@ const onGetBucketList = function () {
     .catch(ui.getBucketListFailure)
 }
 
-const onPostBucketList = function (data) {
+const onPostBucketList = function (event) {
   console.log('onPostBucketList ran')
-  api.postBucketList()
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log(data)
+  api.postBucketList(data)
     .then(ui.postBucketListSuccess)
     .catch(ui.postBucketListFailure)
 }
 
 const addHandlers = function () {
   // $('#').on('click', onGetBucketList)
+  $('#add-listitem').on('submit', onPostBucketList)
 }
 
 module.exports = {
