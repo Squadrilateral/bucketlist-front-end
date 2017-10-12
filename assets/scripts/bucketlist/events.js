@@ -16,15 +16,24 @@ const onPostBucketList = function (event) {
   console.log('onPostBucketList ran')
   event.preventDefault()
   const data = getFormFields(this)
-  console.log(data)
-  api.postBucketList(data)
-    .then(ui.postBucketListSuccess)
-    .catch(ui.postBucketListFailure)
+  console.log('onPostBucketList data is', data)
+  if (data.listitem.name.trim().length) {
+    api.postBucketList(data)
+      .then(ui.postBucketListSuccess)
+      .catch(ui.postBucketListFailure)
+  }
 }
 
 const getItemId = function (button) {
   const elementId = $(button).parent().parent().attr('data-id')
   return elementId
+}
+
+const getItemName = function (button) {
+  const itemName = $(button).parent().siblings()[0].text()
+  // $(itemName).html('')
+  console.log('itemNameTarge', itemName)
+  return itemName
 }
 
 const onDeleteItem = function (event) {
@@ -38,10 +47,20 @@ const onDeleteItem = function (event) {
     .catch(ui.deleteItemFailure)
 }
 
+const getPreviousData = function (editButton) {
+  const target = editButton.parent()
+  // const target = editButton.parent().parent().siblings()[0].html()
+
+  console.log('target', target)
+}
+
 const getData = function (event) {
   event.preventDefault()
   const editButton = event.target
   store.editedItemId = getItemId(editButton)
+  // store.edittedItemName = getItemName(editButton)
+  // console.log('item name =', store.edittedItemName)
+  // getPreviousData(editButton)
   // $('#modal-edit').modal('show')
   console.log('elementId data is ', store.editedItemId)
   $('#edit-listitem').on('submit', onUpdateItem)
