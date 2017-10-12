@@ -170,16 +170,16 @@
             <div class='message-form'></div>
             <form id="edit-listitem">
               <label for="item-name">Name</label>
-              <input class="form-control" id="item-name" type="text" name="listitem[name]" placeholder="Name">
+              <input class="form-control" id="input-item-name" type="text" name="listitem[name]" placeholder="Name">
               <br>
               <label for="location">Location</label>
-              <input class="form-control" id="location" type="text" name="listitem[location]" placeholder="Location">
+              <input class="form-control" id="input-location" type="text" name="listitem[location]" placeholder="Location">
               <br>
               <label for="category">Category</label>
-              <input class="form-control" id="category" type="text" name="listitem[category]" placeholder="Category">
+              <input class="form-control" id="input-category" type="text" name="listitem[category]" placeholder="Category">
               <br>
               <label for="rating">Rating</label>
-              <input class="form-control" id="rating" type="text" name="credentials[rating]" placeholder="Rating (1-5)">
+              <input class="form-control" id="input-rating" type="number" max=5 min=0 name="credentials[rating]" placeholder="Rating (1-5)">
               <br>
               <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>
             </form>
