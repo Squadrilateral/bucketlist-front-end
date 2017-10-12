@@ -36,6 +36,8 @@ const deleteItemFailure = function (error) {
 
 const updateItemSuccess = function (data) {
   console.log(data)
+  $('form').trigger('reset')
+  $('#modal-edit').modal('hide')
   api.getBucketList()
     .then(getBucketListSuccess)
     .catch(getBucketListFailure)

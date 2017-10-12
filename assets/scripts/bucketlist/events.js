@@ -42,6 +42,7 @@ const getData = function (event) {
   event.preventDefault()
   const editButton = event.target
   store.editedItemId = getItemId(editButton)
+  // $('#modal-edit').modal('show')
   console.log('elementId data is ', store.editedItemId)
   $('#edit-listitem').on('submit', onUpdateItem)
 }
@@ -50,6 +51,7 @@ const onUpdateItem = function (event) {
   event.preventDefault()
   console.log('onUpdateItem ran')
   const data = getFormFields(this)
+  console.log('data in onUpdateItem', data)
   const elementId = store.editedItemId
   api.updateItem(elementId, data)
     .then(ui.updateItemSuccess)
