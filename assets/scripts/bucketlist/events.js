@@ -21,6 +21,8 @@ const onPostBucketList = function (event) {
     api.postBucketList(data)
       .then(ui.postBucketListSuccess)
       .catch(ui.postBucketListFailure)
+  } else {
+    $('.add-listitem-message').html('Name field is require')
   }
 }
 

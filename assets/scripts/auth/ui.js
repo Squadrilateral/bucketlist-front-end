@@ -64,6 +64,7 @@ const signOutSuccess = function (data) {
   $('#btn-sign-out').hide()
   $('#add-listitem').hide()
   $('#listcontent').html('')
+  $('.add-listitem-message').html('')
 }
 
 const signOutFailure = function () {

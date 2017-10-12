@@ -8,6 +8,7 @@ const getBucketListSuccess = function (data) {
   console.log('List Items console log ', store.listitems)
   const showListHTML = showList({ listitems: store.listitems })
   $('#listcontent').html(showListHTML)
+  $('.add-listitem-message').html('')
 }
 
 const getBucketListFailure = function (error) {
