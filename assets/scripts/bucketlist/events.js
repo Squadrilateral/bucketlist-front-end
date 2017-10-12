@@ -30,9 +30,13 @@ const getItemId = function (button) {
 }
 
 const getItemName = function (button) {
-  const itemName = $(button).parent().siblings()[0].text()
+  const itemName = $(button).parent().siblings()[0]
   // $(itemName).html('')
-  console.log('itemNameTarge', itemName)
+  console.log('target', itemName)
+  console.log($(button))
+  // const listitem = $(button).attr('data-item-id')
+  // console.log('listitem is', listitem.location)
+  // console.log('itemNameTarge', itemName)
   return itemName
 }
 
@@ -48,19 +52,31 @@ const onDeleteItem = function (event) {
 }
 
 const getPreviousData = function (editButton) {
-  const target = editButton.parent()
+  // const target = editButton.parent()
   // const target = editButton.parent().parent().siblings()[0].html()
+  api.getOneBucketItem(store.editedItemId)
+    .then((data) => {
+      console.log('data', data.listitem)
+      store.getOneBucketItem = data.listitem
+      $('#input-item-name').val(data.listitem.name)
+      $('#input-location').val(data.listitem.location)
+      $('#input-category').val(data.listitem.category)
+      $('#input-rating').val(data.listitem.rating)
+      $('#modal-edit').modal('show')
+    })
 
-  console.log('target', target)
+  // console.log('itemData is', itemData)
+  // console.log('responsed data is', itemData.responseJSON)
+  // console.log('target', target)
 }
 
 const getData = function (event) {
   event.preventDefault()
   const editButton = event.target
   store.editedItemId = getItemId(editButton)
-  // store.edittedItemName = getItemName(editButton)
+  store.edittedItemName = getItemName(editButton)
   // console.log('item name =', store.edittedItemName)
-  // getPreviousData(editButton)
+  getPreviousData(editButton)
   // $('#modal-edit').modal('show')
   console.log('elementId data is ', store.editedItemId)
   $('#edit-listitem').on('submit', onUpdateItem)
