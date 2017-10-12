@@ -51,7 +51,7 @@ const onDeleteItem = function (event) {
     .catch(ui.deleteItemFailure)
 }
 
-const getPreviousData = function (editButton) {
+const getCurrentData = function (editButton) {
   // const target = editButton.parent()
   // const target = editButton.parent().parent().siblings()[0].html()
   api.getOneBucketItem(store.editedItemId)
@@ -76,7 +76,7 @@ const getData = function (event) {
   store.editedItemId = getItemId(editButton)
   store.edittedItemName = getItemName(editButton)
   // console.log('item name =', store.edittedItemName)
-  getPreviousData(editButton)
+  getCurrentData(editButton)
   // $('#modal-edit').modal('show')
   console.log('elementId data is ', store.editedItemId)
   $('#edit-listitem').on('submit', onUpdateItem)
