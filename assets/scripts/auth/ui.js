@@ -3,8 +3,8 @@ const store = require('../store')
 const bucketlistEvents = require('../bucketlist/events')
 
 const signUpSuccess = function (data) {
-  store.user = data.user
-  store.token = data.user.token
+  // store.user = data.user
+  // store.token = data.user.token
   $('.message-form').html('Successfully signed up. Please log in!')
   clearForm()
 }
@@ -14,7 +14,8 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   store.user = data.user
-  store.token = data.user.token
+  console.log('store.user.token is in sign in success ', store.user.token)
+  // store.token = data.user.token
   store.isSignedIn = true
   clearForm()
   $('#examples').hide()
