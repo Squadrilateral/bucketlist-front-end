@@ -13,7 +13,10 @@ const getOneBucketItem = function (id) {
 const getBucketList = function () {
   return $.ajax({
     url: config.apiOrigin + '/listitems/',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
