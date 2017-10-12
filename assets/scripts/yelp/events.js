@@ -7,9 +7,9 @@ const store = require('../store')
 const onYelpSearch = function () {
   console.log('onYelpSearch ran')
   api.getYelpResults()
+    .then((data) => console.log(data))
     .then(ui.getYelpResultsSuccess)
-    .then(console.log('it worked'))
-    .catch(console.log('it didnt work'))
+    .catch(ui.getYelpResultsFailure)
 }
 
 const addHandlers = function () {
