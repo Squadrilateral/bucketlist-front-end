@@ -8,6 +8,7 @@ const getBucketListSuccess = function (data) {
   console.log('List Items console log ', store.listitems)
   const showListHTML = showList({ listitems: store.listitems })
   $('#listcontent').html(showListHTML)
+  $('.add-listitem-message').html('')
 }
 
 const getBucketListFailure = function (error) {
@@ -17,6 +18,7 @@ const getBucketListFailure = function (error) {
 const postBucketListSuccess = function (data) {
   console.log('postBucketListSuccess ran')
   console.log(data)
+  $('form').trigger('reset')
   api.getBucketList()
     .then(getBucketListSuccess)
     .catch(getBucketListFailure)
@@ -36,6 +38,8 @@ const deleteItemFailure = function (error) {
 
 const updateItemSuccess = function (data) {
   console.log(data)
+  $('form').trigger('reset')
+  $('#modal-edit').modal('hide')
   api.getBucketList()
     .then(getBucketListSuccess)
     .catch(getBucketListFailure)

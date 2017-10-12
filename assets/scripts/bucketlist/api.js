@@ -1,10 +1,22 @@
 const config = require('../config')
 const store = require('../store')
 
+const getOneBucketItem = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/listitems/' + id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 const getBucketList = function () {
   return $.ajax({
     url: config.apiOrigin + '/listitems/',
-    method: 'GET'
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
   })
 }
 
@@ -51,5 +63,6 @@ module.exports = {
   getBucketList,
   postBucketList,
   deleteItem,
-  updateItem
+  updateItem,
+  getOneBucketItem
 }

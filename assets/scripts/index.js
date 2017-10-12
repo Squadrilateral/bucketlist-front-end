@@ -11,6 +11,7 @@ $(() => {
   setAPIOrigin(location, config)
   $('#btn-change-password').hide()
   $('#btn-sign-out').hide()
+  $('#add-listitem').hide()
   $('.btn-auth').on('click', function () {
     $('.message-form').html('')
   })

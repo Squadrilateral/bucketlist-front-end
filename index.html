@@ -60,22 +60,26 @@
                   <span aria-hidden="true">&times;</span>
               </button>
           <div class="modal-title" id="exampleModalLabel">Sign Up</div>
+        </div>
+        <form id="sign-up">
           <div class="modal-body">
             <div class='message-form'></div>
-            <form id="sign-up">
-              <label for="email-address">Email</label>
-              <input id='email-address' class="form-control" type="text" name="credentials[email]" placeholder="Email">
-              <br>
+
+            <label for="email-address">Email</label>
+            <input id='email-address' class="form-control" type="text" name="credentials[email]" placeholder="Email">
+            <div class="break">
               <label for='password'>Password</label>
               <input class="form-control" id="password" type="password" name="credentials[password]" placeholder="Password">
-              <br>
+            </div>
+            <div class="break">
               <label for="password-confirmation">Password confirmation</label>
               <input class="form-control" id="password-confirmation" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
-              <br>
-              <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign Up">Sign Up</button>
-            </form>
+            </div>
           </div>
-        </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign Up">Sign Up</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -88,21 +92,26 @@
                   <span aria-hidden="true">&times;</span>
               </button>
           <div class="modal-title" id="exampleModalLabel">Sign In</div>
+        </div>
+        <form id="sign-in">
           <div class="modal-body">
             <div class='message-form'></div>
-            <form id="sign-in">
+            <div class="break">
               <label for="email-address">Email</label>
               <input class="form-control" id="email-address" type="text" name="credentials[email]" placeholder="Email">
-              <br>
+            </div>
+            <div class="break">
               <label for='password'>Password</label>
               <input class="form-control" id="password" type="password" name="credentials[password]" placeholder="Password">
-              <br>
-              <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign In">Sign In</button>
-            </form>
+            </div>
           </div>
-        </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign In">Sign In</button>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
   </div>
 
   <!-- Modal change password auth -->
@@ -114,34 +123,41 @@
                   <span aria-hidden="true">&times;</span>
               </button>
           <div class="modal-title" id="exampleModalLabel">Change Password</div>
+        </div>
+        <form id="change-password">
+
           <div class="modal-body">
             <div class='message-form'></div>
-            <form id="change-password">
+            <div class="break">
               <label for="old-password">Old Password</label>
               <input class="form-control" id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
-              <br>
+            </div>
+            <div class="break">
               <label for="new-password">New Password</label>
               <input class="form-control" id="new-password" type="password" name="passwords[new]" placeholder="New Password">
-              <br>
-              <button type="submit" class="btn btn-primary pull-right" name="submit" value="Change Password!">Change Password</button>
-            </form>
+            </div>
           </div>
-        </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Change Password!">Change Password</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
   <h1>My Bucket List!</h1>
+  <div class="add-listitem-message">
+  </div>
   <form id="add-listitem">
     <fieldset>
       <input type="hidden" name="listitem[id]" value="">
       <input type="text" name="listitem[name]" value="" placeholder="Name">
       <input type="text" name="listitem[location]" value="" placeholder="Location">
       <input type="text" name="listitem[category]" value="" placeholder="Category">
-      <input type="text" name="listitem[rating]" value="" placeholder="Rating (1-5)">
+      <input class="rating-input-box" type="number" max=5 min=0 name="listitem[rating]" value="" placeholder="Rating (1-5)">
       <input type="submit" name="submit" value="Add a Bucket List item!">
     </fieldset>
   </form>
-  <form id="edit-listitem">
+  <!-- <form id="edit-listitem">
     <fieldset>
       <input type="hidden" name="listitem[id]" value="">
       <input type="text" name="listitem[name]" value="" placeholder="Name">
@@ -150,12 +166,46 @@
       <input type="text" name="listitem[rating]" value="" placeholder="Rating (1-5)">
       <input type="submit" name="submit" value="Edit a Bucket List item!">
     </fieldset>
-  </form>
+  </form> -->
   <div id="listcontent">
   </div>
 
 
 
+  <!-- modal edit -->
+
+  <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="modal-title" id="exampleModalLabel">Edit Item</div>
+        </div>
+        <form id="edit-listitem">
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <label for="item-name">Name</label>
+            <input class="form-control" id="input-item-name" type="text" name="listitem[name]" placeholder="Name">
+            <br>
+            <label for="location">Location</label>
+            <input class="form-control" id="input-location" type="text" name="listitem[location]" placeholder="Location">
+            <br>
+            <label for="category">Category</label>
+            <input class="form-control" id="input-category" type="text" name="listitem[category]" placeholder="Category">
+            <br>
+            <label for="rating">Rating</label>
+            <input class="form-control" id="input-rating" type="number" max=5 min=0 name="listitem[rating]" placeholder="Rating (1-5)">
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
