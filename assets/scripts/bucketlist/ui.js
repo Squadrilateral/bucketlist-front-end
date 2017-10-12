@@ -17,6 +17,7 @@ const getBucketListFailure = function (error) {
 const postBucketListSuccess = function (data) {
   console.log('postBucketListSuccess ran')
   console.log(data)
+  $('form').trigger('reset')
   api.getBucketList()
     .then(getBucketListSuccess)
     .catch(getBucketListFailure)

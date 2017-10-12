@@ -29,16 +29,16 @@ const getItemId = function (button) {
   return elementId
 }
 
-const getItemName = function (button) {
-  const itemName = $(button).parent().siblings()[0]
-  // $(itemName).html('')
-  console.log('target', itemName)
-  console.log($(button))
-  // const listitem = $(button).attr('data-item-id')
-  // console.log('listitem is', listitem.location)
-  // console.log('itemNameTarge', itemName)
-  return itemName
-}
+// const getItemName = function (button) {
+//   const itemName = $(button).parent().siblings()[0]
+//   // $(itemName).html('')
+//   console.log('target', itemName)
+//   console.log($(button))
+//   // const listitem = $(button).attr('data-item-id')
+//   // console.log('listitem is', listitem.location)
+//   // console.log('itemNameTarge', itemName)
+//   return itemName
+// }
 
 const onDeleteItem = function (event) {
   event.preventDefault()
@@ -74,7 +74,7 @@ const getData = function (event) {
   event.preventDefault()
   const editButton = event.target
   store.editedItemId = getItemId(editButton)
-  store.edittedItemName = getItemName(editButton)
+  // store.edittedItemName = getItemName(editButton)
   // console.log('item name =', store.edittedItemName)
   getCurrentData(editButton)
   // $('#modal-edit').modal('show')
