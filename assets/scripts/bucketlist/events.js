@@ -6,17 +6,14 @@ const getFormFields = require('../../../lib/get-form-fields')
 const store = require('../store')
 
 const onGetBucketList = function () {
-  console.log('onGetBucketList ran!')
   api.getBucketList()
     .then(ui.getBucketListSuccess)
     .catch(ui.getBucketListFailure)
 }
 
 const onPostBucketList = function (event) {
-  console.log('onPostBucketList ran')
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('onPostBucketList data is', data)
   if (data.listitem.name.trim().length) {
     api.postBucketList(data)
       .then(ui.postBucketListSuccess)
@@ -33,25 +30,21 @@ const getItemId = function (button) {
 
 const getItemName = function (button) {
   const itemName = $(button).parent().siblings('.listItemName').attr('data-item-name')
-  console.log('itemName is', itemName)
   return itemName
 }
 
 const getItemLocation = function (button) {
   const itemLocation = $(button).parent().siblings('.listItemLocation').attr('data-item-location')
-  console.log('itemLocation is', itemLocation)
   return itemLocation
 }
 
 const getItemCategory = function (button) {
   const itemCategory = $(button).parent().siblings('.listItemCategory').attr('data-item-category')
-  console.log('itemCategory is', itemCategory)
   return itemCategory
 }
 
 const getItemRating = function (button) {
   const itemRating = $(button).parent().siblings('.listItemRating').attr('data-item-rating')
-  console.log('itemRating is', itemRating)
   return itemRating
 }
 
@@ -119,15 +112,12 @@ const getData = function (event) {
   // console.log('item name =', store.edittedItemName)
   getCurrentData(editButton)
   // $('#modal-edit').modal('show')
-  console.log('elementId data is ', store.editedItemId)
   $('#edit-listitem').on('submit', onUpdateItem)
 }
 
 const onUpdateItem = function (event) {
   event.preventDefault()
-  console.log('onUpdateItem ran')
   const data = getFormFields(this)
-  console.log('data in onUpdateItem', data)
   const elementId = store.editedItemId
   api.updateItem(elementId, data)
     .then(ui.updateItemSuccess)
@@ -143,5 +133,6 @@ const addHandlers = function () {
 
 module.exports = {
   addHandlers,
-  onGetBucketList
+  onGetBucketList,
+  onPostBucketList
 }

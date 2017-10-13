@@ -8,19 +8,32 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 .centered {
   position: relative;
 }
-
+.container-yelp {
+  overflow-y: scroll;
+  height: 500px;
+}
 h1 {
   text-align: center;
   font-family: 'Tangerine';
   font-size: 80px
 }
-
+li {
+  clear: both;
+  list-style: none;
+  font-family: monospace;
+}
 .navbar-header {
   color: white;
 }
 
 .rating-input-box {
   width: 10%;
+}
+
+.yelpImage {
+  clear: both;
+  float: right;
+  margin-bottom: 50px;
 }
 
 #yelp-search {
