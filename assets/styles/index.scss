@@ -17,7 +17,11 @@ h1 {
   font-family: 'Tangerine';
   font-size: 80px
 }
-
+li {
+  clear: both;
+  list-style: none;
+  font-family: monospace;
+}
 .navbar-header {
   color: white;
 }
@@ -25,9 +29,7 @@ h1 {
 .rating-input-box {
   width: 10%;
 }
-li {
-  clear: both;
-}
+
 .yelpImage {
   clear: both;
   float: right;
