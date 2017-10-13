@@ -28,7 +28,7 @@
       <span class="icon-bar"></span>
 
     </button>
-        <a class="navbar-brand" href="#">Bucket List</a>
+        <div class="navbar-brand"></div>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
@@ -147,19 +147,6 @@
   </div>
   <h1>My Bucket List</h1>
   <div style="text-align: center"><img src="https://blog.vitalchek.com/wp-content/uploads/2016/06/iStock_67942361_LARGE.jpg" class="centered" height="500" width="650"> </div>
-
-  <div class="add-listitem-message">
-  </div>
-  <form id="add-listitem">
-    <fieldset>
-      <input type="hidden" name="listitem[id]" value="">
-      <input type="text" id="listItemName" name="listitem[name]" value="" placeholder="Name">
-      <input type="text" id="listItemLocation" name="listitem[location]" value="" placeholder="Location">
-      <input type="text" name="listitem[category]" value="" placeholder="Category">
-      <input class="rating-input-box" type="number" max=5 min=0 name="listitem[rating]" value="" placeholder="Rating (1-5)">
-      <input type="submit" name="submit" value="Add a Bucket List item!">
-    </fieldset>
-  </form>
   <!-- <form id="edit-listitem">
     <fieldset>
       <input type="hidden" name="listitem[id]" value="">
@@ -170,11 +157,6 @@
       <input type="submit" name="submit" value="Edit a Bucket List item!">
     </fieldset>
   </form> -->
-  <div id="listcontent">
-  </div>
-
-
-
   <!-- modal edit -->
 
   <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
@@ -209,16 +191,40 @@
       </div>
     </div>
   </div>
-  <div id="yelp">
-    <form id="yelp-search">
-      <fieldset>
-        <input type="text" name="term" value="" placeholder="Name">
-        <input type="text" name="location" value="" placeholder="Location">
-        <input type="submit" name="submit" value="Search Yelp!">
-      </fieldset>
-    </form>
-    <div id="search-content"></div>
-  </div>
+    <div class='col-lg-6'>
+      <br>
+      <div class="add-listitem-message">
+      </div>
+      <form id="add-listitem">
+        <fieldset>
+          <input type="hidden" name="listitem[id]" value="">
+          <input type="text" id="listItemName" name="listitem[name]" value="" placeholder="Name">
+          <input type="text" id="listItemLocation" name="listitem[location]" value="" placeholder="Location">
+          <input type="text" name="listitem[category]" value="" placeholder="Category">
+          <input class="rating-input-box" type="number" max=5 min=0 name="listitem[rating]" value="" placeholder="Rating (1-5)">
+          <input type="submit" name="submit" value="Add a Bucket List item!">
+        </fieldset>
+      </form>
+      <br>
+      <div id="listcontent">
+      </div>
+    </div>
+    <div class='col-lg-6'>
+      <br>
+      <div id="yelp">
+        <div class="yelp-message"></div>
+        <form id="yelp-search">
+          <fieldset>
+            <input type="text" name="term" value="" placeholder="Name">
+            <input type="text" name="location" value="" placeholder="Location">
+            <input type="submit" name="submit" value="Search Yelp!">
+          </fieldset>
+        </form>
+      </div>
+      <br>
+      <div id="search-content"></div>
+    </div>
+
   <!-- Add Bucket List Item modal from yelp search -->
   <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
     <div class="modal-dialog" role="document">

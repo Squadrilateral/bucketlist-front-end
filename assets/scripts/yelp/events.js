@@ -11,7 +11,7 @@ const onYelpSearch = function (event) {
   // if (data.term.trim().length) {
   api.getYelpResults(data)
     // .then((data) => console.log('on yelp search is ', data))
-    .then(data => ui.getYelpResultsSuccess(data))
+    .then(ui.getYelpResultsSuccess)
     .catch(ui.getYelpResultsFailure)
   // } else {
     // console.log('name field required for yelp search')

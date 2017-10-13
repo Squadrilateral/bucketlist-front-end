@@ -13,7 +13,8 @@ const getYelpResultsSuccess = function (data) {
 }
 
 const getYelpResultsFailure = function (error) {
-  console.error(error)
+  $('.yelp-message').text('Search failed. Please try again.')
+  console.log(error)
 }
 
 module.exports = {
