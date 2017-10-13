@@ -70,6 +70,7 @@ const signOutSuccess = function (data) {
   $('.add-listitem-message').html('')
   $('.centered').show()
   $('#yelp-search').hide()
+  $('#search-content').text('')
 }
 
 const signOutFailure = function () {
