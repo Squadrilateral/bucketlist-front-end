@@ -3,6 +3,7 @@ const api = require('./api')
 const ui = require('./ui')
 const getFormFields = require('../../../lib/get-form-fields')
 const store = require('../store')
+const bucketlistEvents = require('../bucketlist/events')
 
 const onYelpSearch = function (event) {
   event.preventDefault()
@@ -37,13 +38,14 @@ const getItemLocation = function (button) {
 const getCurrentData = function (addButton) {
   const itemName = getItemName(addButton)
   const itemLocation = getItemLocation(addButton)
-  $('#listItemName').val(itemName)
-  $('#listItemLocation').val(itemLocation)
+  $('#input-yelp-item-name').val(itemName)
+  $('#input-yelp-location').val(itemLocation)
 }
 
 const addHandlers = function () {
   $('#yelp-search').on('submit', onYelpSearch)
   $('#search-content').on('click', '.add-result-button', getCurrentData)
+  $('#add-yelp-listitem').on('submit', bucketlistEvents.onPostBucketList)
 }
 
 module.exports = {

@@ -219,7 +219,39 @@
     </form>
     <div id="search-content"></div>
   </div>
-
+  <!-- Add Bucket List Item modal from yelp search -->
+  <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="modal-title" id="exampleModalLabel">Add Item to Bucket List</div>
+        </div>
+        <form id="add-yelp-listitem">
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <label for="item-name">Name</label>
+            <input class="form-control" id="input-yelp-item-name" type="text" name="listitem[name]" placeholder="Name">
+            <br>
+            <label for="location">Location</label>
+            <input class="form-control" id="input-yelp-location" type="text" name="listitem[location]" placeholder="Location">
+            <br>
+            <label for="category">Category</label>
+            <input class="form-control" id="input-yelp-category" type="text" name="listitem[category]" placeholder="Category">
+            <br>
+            <label for="rating">Rating</label>
+            <input class="form-control" id="input-yelp-rating" type="number" max=5 min=0 name="listitem[rating]" placeholder="Rating (1-5)">
+            <br>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

@@ -143,5 +143,6 @@ const addHandlers = function () {
 
 module.exports = {
   addHandlers,
-  onGetBucketList
+  onGetBucketList,
+  onPostBucketList
 }

@@ -19,6 +19,7 @@ const postBucketListSuccess = function (data) {
   console.log('postBucketListSuccess ran')
   console.log(data)
   $('form').trigger('reset')
+  $('#modal-add').modal('hide')
   api.getBucketList()
     .then(getBucketListSuccess)
     .catch(getBucketListFailure)
