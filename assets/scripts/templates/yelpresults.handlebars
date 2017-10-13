@@ -1,5 +1,5 @@
 {{#each yelpresults as |result|}}
-<ul>
+<ul data-id="{{result.id}}">
   <li class="resultName" data-item-name="{{result.name}}">Name: {{result.name}}</li>
   <li class="resultLocation" data-item-location="{{result.location.city}}">Location: {{result.location.city}}</li>
 
