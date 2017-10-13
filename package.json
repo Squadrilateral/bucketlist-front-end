@@ -7,7 +7,10 @@
     "content": "CC­BY­NC­SA 4.0"
   },
   "dependencies": {
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "node-yelp": "0.0.3",
+    "node-yelp-fusion": "^1.0.4",
+    "yelp-fusion": "^1.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.25.0",

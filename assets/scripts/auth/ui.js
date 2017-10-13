@@ -32,6 +32,7 @@ const signInSuccess = function (data) {
   $('#btn-change-password').show()
   $('#btn-sign-out').show()
   $('#add-listitem').show()
+  $('.centered').hide()
   bucketlistEvents.onGetBucketList()
 }
 
@@ -66,6 +67,7 @@ const signOutSuccess = function (data) {
   $('#add-listitem').hide()
   $('#listcontent').html('')
   $('.add-listitem-message').html('')
+  $('.centered').show()
 }
 
 const signOutFailure = function () {

@@ -9,6 +9,7 @@
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
@@ -144,7 +145,9 @@
       </div>
     </div>
   </div>
-  <h1>My Bucket List!</h1>
+  <h1>My Bucket List</h1>
+  <div style="text-align: center"><img src="https://blog.vitalchek.com/wp-content/uploads/2016/06/iStock_67942361_LARGE.jpg" class="centered" height="500" width="650"> </div>
+
   <div class="add-listitem-message">
   </div>
   <form id="add-listitem">
@@ -206,6 +209,17 @@
       </div>
     </div>
   </div>
+  <div id="yelp">
+    <form id="yelp-search">
+      <fieldset>
+        <input type="text" name="term" value="" placeholder="Name">
+        <input type="text" name="location" value="" placeholder="Location">
+        <input type="submit" name="submit" value="Search Yelp!">
+      </fieldset>
+    </form>
+    <div id="search-content"></div>
+  </div>
+
 </body>
 
 </html>
