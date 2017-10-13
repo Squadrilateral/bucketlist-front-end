@@ -7,7 +7,7 @@ const getYelpResultsSuccess = function (data) {
   const showResultHTML = showResult({ yelpresults: store.yelpresults })
   $('#search-content').html(showResultHTML)
 
-  // console.log('getting to ui call')
+ // console.log('getting to ui call')
   // console.log('data from api is ', data)
   $('#search-content').show()
 }
