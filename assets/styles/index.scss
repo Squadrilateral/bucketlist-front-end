@@ -1,16 +1,12 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-.navbar-header {
-  color: white;
-}
 
 .break {
   margin-bottom: 6px;
 }
-
-.rating-input-box {
-  width: 10%;
+.centered {
+  position: relative;
 }
 
 h1 {
@@ -19,7 +15,14 @@ h1 {
   font-size: 80px
 }
 
-.centered {
-  position: relative;
+.navbar-header {
+  color: white;
+}
 
+.rating-input-box {
+  width: 10%;
+}
+
+#yelp-search {
+  display: none;
 }
