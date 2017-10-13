@@ -1,10 +1,10 @@
 {{#each yelpresults as |result|}}
-<ul>
+<ul data-id="{{result.id}}">
   <li class="resultName" data-item-name="{{result.name}}">Name: {{result.name}}</li>
   <li class="resultLocation" data-item-location="{{result.location.city}}">Location: {{result.location.city}}</li>
-
-  <li><button  class="add-result-button">Add To Bucket List!</button></li>
-
+  <li><button  class="add-result-button" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button></li>
+  <img class="yelpImage" src="{{result.image_url}}" style="width:128px;height:128px;"></img>
+  <a href="{{result.url}}">Visit Site: {{result.name}}</a>
   <!-- <li><button class='edit-button'>Edit</button></li> -->
 </ul>
 {{/each}}
