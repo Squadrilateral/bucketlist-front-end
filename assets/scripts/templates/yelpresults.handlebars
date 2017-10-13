@@ -1,0 +1,10 @@
+{{#each yelpresults as |result|}}
+<ul>
+  <li class="resultName" data-item-name="{{result.name}}">Name: {{result.name}}</li>
+  <li class="resultLocation" data-item-location="{{result.location.city}}">Location: {{result.location.city}}</li>
+
+  <li><button  class="add-result-button">Add To Bucket List!</button></li>
+
+  <!-- <li><button class='edit-button'>Edit</button></li> -->
+</ul>
+{{/each}}
