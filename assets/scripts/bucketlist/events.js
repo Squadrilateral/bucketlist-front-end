@@ -126,6 +126,10 @@ const onUpdateItem = function (event) {
 const addHandlers = function () {
   $('.add-item-btn').on('click', function () {
     $('.message-form').html('')
+    $('#input-yelp-item-name').val('')
+    $('#input-yelp-location').val('')
+    $('#input-yelp-category').val('')
+    $('#input-yelp-rating').val('')
   })
   $('#add-listitem').on('submit', onPostBucketList)
   $('#listcontent').on('click', '.remove-button', onDeleteItem)

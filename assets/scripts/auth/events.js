@@ -7,10 +7,13 @@ const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   clearMessage()
-
-  api.signUp(data)
-    .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+  if (data.credentials.password.trim().length) {
+    api.signUp(data)
+      .then(ui.signUpSuccess)
+      .catch(ui.signUpFailure)
+  } else {
+    $('.message-form').text('Please enter a password.')
+  }
 }
 
 const onSignIn = function (event) {
@@ -39,6 +42,13 @@ const onSignOut = function (event) {
 }
 const clearMessage = function () {
   $('#message-form').text('')
+  $('#email-address').val('')
+  $('#password').val('')
+  $('#password-confirmation').val('')
+  $('#email-address').val('')
+  $('#password').val('')
+  $('#old-password').val('')
+  $('#new-password').val('')
 }
 
 const addHandlers = function () {
@@ -49,6 +59,9 @@ const addHandlers = function () {
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#btn-sign-out').on('click', onSignOut)
+  $('#btn-sign-up').on('click', clearMessage)
+  $('#btn-sign-in').on('click', clearMessage)
+  $('#btn-change-password').on('click', clearMessage)
 }
 
 module.exports = {
