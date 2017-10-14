@@ -28,25 +28,19 @@ const getItemId = function (button) {
   // const elementId = $(button).parent().parent().children().first().attr('data-id')
   const element = $(button).parent().parent().children()[0]
   const elementId = $(element).attr('data-id')
-  console.log($(button).parent().parent().children()[0])
-  console.log('elementId=', elementId)
   return elementId
 }
 
 const getItemName = function (button) {
   // const itemName = $(button).parent().siblings('.listItemName').attr('data-item-name')
   const element = $(button).parent().prev().children()[0]
-  console.log('element is', element)
   const itemName = $(element).attr('data-item-name')
-
-  console.log('getItemName element', itemName)
   return itemName
 }
 
 const getItemLocation = function (button) {
   // const itemLocation = $(button).parent().siblings('.listItemLocation').attr('data-item-location')
   const element = $(button).parent().prev().children()[1]
-  console.log('element is', element)
   const itemLocation = $(element).attr('data-item-location')
   return itemLocation
 }
@@ -54,7 +48,6 @@ const getItemLocation = function (button) {
 const getItemCategory = function (button) {
   // const itemCategory = $(button).parent().siblings('.listItemCategory').attr('data-item-category')
   const element = $(button).parent().prev().children()[2]
-  console.log('element is', element)
   const itemCategory = $(element).attr('data-item-category')
   return itemCategory
 }
@@ -63,9 +56,15 @@ const getItemRating = function (button) {
   // const itemRating = $(button).parent().siblings('.listItemRating').attr('data-item-rating')
 
   const element = $(button).parent().prev().children()[3]
-  console.log('element is', element)
   const itemRating = $(element).attr('data-item-rating')
   return itemRating
+}
+
+const getItemStatus = function (button) {
+  const element = $(button).parent().prev().children()[4]
+  const itemStatus = $(element).attr('data-item-status')
+  console.log('Item Status is ', itemStatus)
+  return itemStatus
 }
 
 // const getItemName = function (button) {
@@ -97,6 +96,7 @@ const getCurrentData = function (editButton) {
   const itemLocation = getItemLocation(editButton)
   const itemCategory = getItemCategory(editButton)
   const itemRating = getItemRating(editButton)
+  const itemStatus = getItemStatus(editButton)
   // const itemName = $(editButton).attr('data-item-name')
   // console.log('this is', this)
   // const itemLocation = $(this).attr('data-item-location')

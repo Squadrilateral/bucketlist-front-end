@@ -5,6 +5,7 @@
   <title>Bucket List</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset='utf-8'>
 
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -298,6 +299,13 @@
             <label for="rating">Rating</label>
             <input class="form-control" id="input-rating" type="number" max=5 min=0 name="listitem[rating]" placeholder="Rating (1-5)">
             <br>
+            <div class=“dropdown”>
+              <select id="ratingSelect1" class="form-control" type="text" name="listitem[status]">
+                <!--<input class="form-control" id="input-yelp-status" type="text" name="listitem[status]">-->
+                <option >Incomplete</option>
+                <option>Completed ✅</option>
+              </select>
+            </div>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>
@@ -332,7 +340,6 @@
             <br>
             <label for="rating">Rating</label>
             <input class="form-control" id="input-yelp-rating" type="number" max=5 min=0 name="listitem[rating]" placeholder="Rating (1-5)">
-            <br>
           </div>
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>

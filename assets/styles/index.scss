@@ -58,12 +58,15 @@ body {
 .box-item {
   // border-bottom: solid;
   // height: 177px;
-  height: 131px;
+  height: 154px;
   width: 100%;
+  border: 3px solid black;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 .box-yelp-result {
   height: 208px;
-  width: 80%;
+  width: 100%;
 }
 .btn-primary {
 height: 30px;
@@ -83,7 +86,7 @@ font-size: $font-size-main;
 //   position: relative;
 // }
 .container {
-  padding-left: 4%;
+  padding-left: 2%;
   // border-style: solid;
 }
 .container-break {
@@ -166,6 +169,7 @@ h1 {
 .search-input {
   height: 30px;
   font-size: 20px;
+  border: 1px solid black;
 }
 .yelp-message {
   color: red;
