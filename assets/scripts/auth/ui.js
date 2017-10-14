@@ -17,6 +17,7 @@ const signInSuccess = function (data) {
   console.log('store.user.token is in sign in success ', store.user.token)
   // store.token = data.user.token
   store.isSignedIn = true
+  store.status = 'Incomplete'
   clearForm()
   $('#examples').hide()
 
@@ -37,7 +38,7 @@ const signInSuccess = function (data) {
   $('.bucket-image').hide()
   $('.add-item-btn').show()
   $('.add-bucketList-message').show()
-
+  $('#incomplete-button').show()
   bucketlistEvents.onGetBucketList()
 }
 
@@ -78,6 +79,7 @@ const signOutSuccess = function (data) {
   $('.bucket-image').show()
   $('.add-item-btn').hide()
   $('.add-bucketList-message').hide()
+  $('#incomplete-button').hide()
 }
 
 const signOutFailure = function () {
