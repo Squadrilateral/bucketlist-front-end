@@ -3,15 +3,20 @@ const showResult = require('../templates/yelpresults.handlebars')
 
 const getYelpResultsSuccess = function (data) {
   store.yelpresults = data.yelpresults
-  $('.yelp-message').text('')
+
   console.log('in get reults success')
   // console.log("data.yelpresults", data.yelpresults)
-  const showResultHTML = showResult({ yelpresults: store.yelpresults })
-  $('#search-content').html(showResultHTML)
-
+  if(data.yelpresults.length) {
+    $('.yelp-message').text('')
+    const showResultHTML = showResult({ yelpresults: store.yelpresults })
+    $('#search-content').html(showResultHTML)
+    $('#search-content').show()
+  } else {
+    $('.yelp-message').html('No results found')
+    $('#search-content').html('')
+  }
  // console.log('getting to ui call')
   // console.log('data from api is ', data)
-  $('#search-content').show()
 }
 
 const getYelpResultsFailure = function (error) {
