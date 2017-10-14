@@ -1,41 +1,186 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$font-main: 'Josefin Sans', sans-serif;
+$font-size-main: 20px;
 
+.add-bucketList-message {
+  margin-top: 10px;
+  color: red;
+}
+.add-item-btn {
+    -moz-box-shadow: 3px 4px 0px 0px #1677ab ;
+    -webkit-box-shadow: 3px 4px 0px 0px #1677ab ;
+    box-shadow: 3px 4px 0px 0px #1677ab ;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7ac1ff ), color-stop(1, #77e339 ));
+    background:-moz-linear-gradient(top, #7ac1ff 5%, #77e339 100%);
+    background:-webkit-linear-gradient(top, #7ac1ff 5%, #77e339 100%);
+    background:-o-linear-gradient(top, #7ac1ff 5%, #77e339 100%);
+    background:-ms-linear-gradient(top, #7ac1ff 5%, #77e339 100%);
+    background:linear-gradient(to bottom, #7ac1ff 5%, #77e339 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7ac1ff ', endColorstr='#77e339 ',GradientType=0);
+    background-color:#7ac1ff ;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    border:1px solid #3447c2 ;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff ;
+    font-family:Arial;
+    // font-size:17px;
+    font-weight:bold;
+    // padding:12px 44px;
+    text-decoration:none;
+    text-shadow:0px 1px 0px #c658cc ;
+}
+.add-item-btn:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #77e339 ), color-stop(1, #7ac1ff ));
+    background:-moz-linear-gradient(top, #77e339 5%, #7ac1ff 100%);
+    background:-webkit-linear-gradient(top, #77e339 5%, #7ac1ff 100%);
+    background:-o-linear-gradient(top, #77e339 5%, #7ac1ff 100%);
+    background:-ms-linear-gradient(top, #77e339 5%, #7ac1ff 100%);
+    background:linear-gradient(to bottom, #77e339 5%, #7ac1ff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77e339 ', endColorstr='#7ac1ff ',GradientType=0);
+    background-color:#77e339 ;
+}
+.add-item-btn:active {
+    position:relative;
+    top:1px;
+}
+.add-result-button {
+  margin-top: 3px;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: $font-size-main;
+}
+.box-item {
+  // border-bottom: solid;
+  // height: 177px;
+  height: 131px;
+  width: 100%;
+}
+.box-yelp-result {
+  height: 208px;
+  width: 80%;
+}
+.btn-primary {
+height: 30px;
+font-size: $font-size-main;
+}
 
 .break {
   margin-bottom: 6px;
 }
-.centered {
-  position: relative;
+
+.bucket-image {
+  content:url('https://i.imgur.com/34fBKAn.jpg');
+  margin: auto;
+  width: 50%;
 }
-.container-yelp {
+// .centered {
+//   position: relative;
+// }
+.container {
+  padding-left: 4%;
+  // border-style: solid;
+}
+.container-break {
+  height: 10px;
+}
+.container-list {
+  // padding-left: 2%;
+}
+.container-list-content {
   overflow-y: scroll;
-  height: 500px;
+  height: 450px;
+  font-size: $font-size-main;
 }
+.container-item-btn {
+  // margin-top: 7%;
+  // margin-right: 21%;
+}
+.container-result-info {
+  margin-left: 3%;
+}
+
+// .container-yelp {
+//   padding-right: 2%;
+// }
+
+.container-result-pic .yelpImage {
+  height: 144px;
+  width: 144px;
+  border-radius: 23px;
+}
+.container-yelp-result {
+  overflow-y: scroll;
+  height: 450px;
+  font-size: $font-size-main;
+}
+.edit-button {
+ background-color: #1677ab ;
+ border-radius: 23px;
+ color: white;
+ box-shadow: 3px 4px 0px 0px;
+ border: 1px solid #3447c2 ;
+}
+
 h1 {
   text-align: center;
-  font-family: 'Tangerine';
-  font-size: 80px
+  font-family: 'Gloria Hallelujah', cursive;
+  font-size: 80px;
 }
-li {
-  clear: both;
-  list-style: none;
-  font-family: monospace;
+
+// li {
+//   // clear: both;
+//   list-style: none;
+//   // font-family: monospace;
+// }
+.message-form {
+  color: red;
 }
+.modal-header{
+  font-size: $font-size-main;
+}
+
+// .navbar-nav {
+//   font-size:
+// }
 .navbar-header {
   color: white;
 }
 
-.rating-input-box {
-  width: 10%;
+// .rating-input-box {
+//   width: 15%;
+// }
+.remove-button {
+ background-color: #e82727 ;
+ border-radius: 23px;
+ color: white;
+ box-shadow: 3px 4px 0px 0px;
+ border: 1px solid #3447c2 ;
 }
 
-.yelpImage {
-  clear: both;
-  float: right;
-  margin-bottom: 50px;
+.search-input {
+  height: 30px;
+  font-size: 20px;
+}
+.yelp-message {
+  color: red;
 }
 
 #yelp-search {
   display: none;
+}
+
+
+
+.add-result-button {
+ background-color: #4fad18;
+ border-radius: 23px;
+ color: white;
+ box-shadow: 3px 4px 0px 0px;
+ border: 1px solid #3447c2 ;
 }
