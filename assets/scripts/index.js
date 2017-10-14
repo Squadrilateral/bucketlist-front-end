@@ -19,6 +19,7 @@ $(() => {
 // test end
 
   setAPIOrigin(location, config)
+  $('.add-item-btn').hide()
   $('#btn-change-password').hide()
   $('#btn-sign-out').hide()
   $('#add-listitem').hide()
