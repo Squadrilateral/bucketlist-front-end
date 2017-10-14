@@ -37,8 +37,7 @@ const signInSuccess = function (data) {
   bucketlistEvents.onGetBucketList()
 }
 
-const signInFailure = function (error) {
-  console.error(error)
+const signInFailure = function () {
   $('.message-form').html('Error on sign in')
   clearForm()
 }
