@@ -8,15 +8,12 @@ const bucketlistEvents = require('../bucketlist/events')
 const onYelpSearch = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('on yelp search data is', data)
   if (data.location.trim().length && data.term.trim().length) {
     $('.yelp-message').html('')
   api.getYelpResults(data)
-    // .then((data) => console.log('on yelp search is ', data))
     .then(ui.getYelpResultsSuccess)
     .catch(ui.getYelpResultsFailure)
   } else {
-    console.log('Location field required for yelp search')
     $('.yelp-message').html('Name and location fields are required')
     $('#search-content').html('')
   }
