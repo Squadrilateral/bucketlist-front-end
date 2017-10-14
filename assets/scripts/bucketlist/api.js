@@ -50,7 +50,6 @@ const deleteItem = function (data) {
 }
 
 const updateItem = function (elementId, data) {
-  console.log(data)
   return $.ajax({
     url: config.apiOrigin + '/listitems/' + elementId,
     method: 'PATCH',
