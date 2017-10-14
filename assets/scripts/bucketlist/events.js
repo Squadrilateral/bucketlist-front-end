@@ -15,11 +15,12 @@ const onPostBucketList = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   if (data.listitem.name.trim().length) {
+    $('.message-form').html('')
     api.postBucketList(data)
       .then(ui.postBucketListSuccess)
       .catch(ui.postBucketListFailure)
   } else {
-    $('.add-listitem-message').html('Name field is require')
+    $('.message-form').html('Name field is required')
   }
 }
 
@@ -145,6 +146,9 @@ const onUpdateItem = function (event) {
 
 const addHandlers = function () {
   // $('#').on('click', onGetBucketList)
+  $('.add-item-btn').on('click', function () {
+    $('.message-form').html('')
+  })
   $('#add-listitem').on('submit', onPostBucketList)
   $('#listcontent').on('click', '.remove-button', onDeleteItem)
   $('#listcontent').on('click', '.edit-button', getData)
