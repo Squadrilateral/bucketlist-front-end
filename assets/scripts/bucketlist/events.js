@@ -81,6 +81,7 @@ const getCurrentData = function (editButton) {
   $('#input-location').val(itemLocation)
   $('#input-category').val(itemCategory)
   $('#input-rating').val(itemRating)
+  $('#ratingSelect1').val(itemStatus)
 }
 
 const getData = function (event) {
