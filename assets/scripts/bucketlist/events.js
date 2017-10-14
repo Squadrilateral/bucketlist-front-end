@@ -89,6 +89,7 @@ const getData = function (event) {
   store.editedItemId = getItemId(editButton)
   getCurrentData(editButton)
   $('#edit-listitem').on('submit', onUpdateItem)
+  $('.message-form').html('')
 }
 
 let isChecked = $('#incomplete-button').is(':checked')
@@ -112,9 +113,14 @@ const onUpdateItem = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   const elementId = store.editedItemId
-  api.updateItem(elementId, data)
-    .then(ui.updateItemSuccess)
-    .catch(ui.updateItemFailure)
+  if (data.listitem.name.trim().length) {
+    $('.message-form').html('')
+    api.updateItem(elementId, data)
+      .then(ui.updateItemSuccess)
+      .catch(ui.updateItemFailure)
+  } else {
+    $('.message-form').html('Name field is required')
+  }
 }
 
 const addHandlers = function () {

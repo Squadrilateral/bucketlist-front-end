@@ -30,6 +30,7 @@ const getItemLocation = function (button) {
 }
 
 const getCurrentData = function (addButton) {
+  $('.message-form').html('')
   const itemName = getItemName(addButton)
   const itemLocation = getItemLocation(addButton)
   $('#input-yelp-item-name').val(itemName)

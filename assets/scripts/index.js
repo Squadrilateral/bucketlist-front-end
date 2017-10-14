@@ -18,6 +18,7 @@ $(() => {
     $('.message-form').html('')
   })
 
+
   store.isSignedIn = false
   $('.create-list-btn').hide()
   authEvents.addHandlers()
