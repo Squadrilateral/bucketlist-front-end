@@ -72,5 +72,4 @@ By day 2 we were making progress and agreed to incorporate a stretch goal by att
 ## Future Plans
 
 As a group, future plans would include adding social features to our application
-so you can follow other users. Also, adding photos and including a
-category for completed bucket list items.
+so you can follow other users. Also, users having the ability to add photos of completed bucket list items through AWS.
