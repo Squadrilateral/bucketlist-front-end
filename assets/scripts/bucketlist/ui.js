@@ -2,37 +2,12 @@ const store = require('../store')
 const showList = require('../templates/listitems.handlebars')
 const api = require('./api')
 
-// const getBucketListSuccess = function (data) {
-//   store.listitems = data.listitems
-//   if (data.listitems.length === 0) {
-//     console.log('data.listitems.length is', data.listitems.length)
-//     $('.add-bucketList-message').html('Your bucket is empty. Please add items.')
-//   } else {
-//     const showListHTML = showList({ listitems: store.listitems })
-//     $('#listcontent').html(showListHTML)
-//     $('.add-listitem-message').html('')
-//     $('.add-bucketList-message').html('')
-//   }
-// }
-// const newList = []
-
 const getBucketListSuccess = function (data) {
   store.listitems = data.listitems
-  console.log('store list items is', store.listitems)
   if (store.listitems.length === 0) {
     $('.add-bucketList-message').html('Your bucket is empty. Please add items.')
   } else {
     const newList = store.listitems.filter(item => item.status === store.status)
-    console.log('store.status is ', store.status)
-    console.log('newList is ', newList)
-    //   function (item) {
-    //   console.log('item.status is ', item.status)
-    //   console.log('store.status is ', store.status)
-    //   if (item.status === store.status) {
-    //     // console.log(item.status)
-    //     newList.push(item)
-    //   }
-    // })
     const showListHTML = showList({ listitems: newList })
     $('#listcontent').html(showListHTML)
     $('.add-listitem-message').html('')
