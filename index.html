@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
@@ -54,7 +55,9 @@
   </nav>
 
   <h1>My Bucket List</h1>
+<br>
   <!-- <div style="text-align: center"> -->
+
   <div class="bucket-image">
     <!-- <img src="https://blog.vitalchek.com/wp-content/uploads/2016/06/iStock_67942361_LARGE.jpg" class="centered" height="500" width="650"> -->
   </div>
@@ -62,6 +65,9 @@
     <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-list container'>
       <div class="add-listitem-btn">
       <button class="add-item-btn btn-primary" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button>
+      <div class="break">
+      <div class="add-bucketList-message"></div>
+    </div>
     </div>
       <!-- <br> -->
       <!-- <div class="add-listitem-message">
@@ -119,7 +125,7 @@
           <fieldset>
             <input class="search-input" type="text" name="term" value="" placeholder="Name">
             <input class="search-input" type="text" name="location" value="" placeholder="Location">
-            <button class="btn-primary" type="submit" name="submit">Search Yelp!</button>
+            <button class="btn-primary add-item-btn" type="submit" name="submit">Search Yelp!</button>
           </fieldset>
         </form>
         <div class="yelp-message"></div>
@@ -128,7 +134,7 @@
       <div id="search-content" class="container-yelp-result">
         <!-- test -->
         <!-- <div class="col-6 box-yelp-result">
-          <div class="col-3 pull-left container-reult-pic">
+          <div class="col-3 pull-left container-result-pic">
             <img class="yelpImage" src="{{result.image_url}}" style="width:128px;height:128px;"></img>
           </div>
           <div class="col-3 pull-left container-result-info" data-id="{{result.id}}">
@@ -141,7 +147,7 @@
         </div>
 
         <div class="col-6 box-yelp-result">
-          <div class="col-3 pull-left container-reult-pic">
+          <div class="col-3 pull-left container-result-pic">
             <img class="yelpImage" src="{{result.image_url}}" style="width:128px;height:128px;"></img>
           </div>
           <div class="col-3 pull-left container-result-info" data-id="{{result.id}}">
