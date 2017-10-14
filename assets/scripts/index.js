@@ -9,15 +9,6 @@ const bucketlistEvents = require('./bucketlist/events')
 const yelpEvents = require('./yelp/events')
 
 $(() => {
-
-// test
-// $('#search-content').show()
-// $('#listcontent').show()
-// $('#add-listitem').show()
-// $('#yelp-search').show()
-
-// test end
-
   setAPIOrigin(location, config)
   $('.add-item-btn').hide()
   $('#btn-change-password').hide()
@@ -33,20 +24,6 @@ $(() => {
   bucketlistEvents.addHandlers()
   yelpEvents.addHandlers()
 })
-
-// const Yelp = require('yelp')
-//
-// const opts = {
-//   client_id: process.env.CLIENT_ID,
-//   client_secret: process.env.CLIENT_SECRET,
-//   token_type: process.env.TOKEN_TYPE,
-//   token_secret: process.env.TOKEN_SECRET
-// }
-//
-// const yelp = new Yelp(opts)
-
-
-
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
