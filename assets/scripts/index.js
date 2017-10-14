@@ -9,6 +9,15 @@ const bucketlistEvents = require('./bucketlist/events')
 const yelpEvents = require('./yelp/events')
 
 $(() => {
+
+// test
+// $('#search-content').show()
+// $('#listcontent').show()
+// $('#add-listitem').show()
+// $('#yelp-search').show()
+
+// test end
+
   setAPIOrigin(location, config)
   $('#btn-change-password').hide()
   $('#btn-sign-out').hide()
