@@ -15,37 +15,56 @@ const onPostBucketList = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   if (data.listitem.name.trim().length) {
+    $('.message-form').html('')
     api.postBucketList(data)
       .then(ui.postBucketListSuccess)
       .catch(ui.postBucketListFailure)
   } else {
-    $('.add-listitem-message').html('Name field is require')
+    $('.message-form').html('Name field is required')
   }
 }
 
 const getItemId = function (button) {
-  const elementId = $(button).parent().parent().attr('data-id')
+  // const elementId = $(button).parent().parent().children().first().attr('data-id')
+  const element = $(button).parent().parent().children()[0]
+  const elementId = $(element).attr('data-id')
   return elementId
 }
 
 const getItemName = function (button) {
-  const itemName = $(button).parent().siblings('.listItemName').attr('data-item-name')
+  // const itemName = $(button).parent().siblings('.listItemName').attr('data-item-name')
+  const element = $(button).parent().prev().children()[0]
+  const itemName = $(element).attr('data-item-name')
   return itemName
 }
 
 const getItemLocation = function (button) {
-  const itemLocation = $(button).parent().siblings('.listItemLocation').attr('data-item-location')
+  // const itemLocation = $(button).parent().siblings('.listItemLocation').attr('data-item-location')
+  const element = $(button).parent().prev().children()[1]
+  const itemLocation = $(element).attr('data-item-location')
   return itemLocation
 }
 
 const getItemCategory = function (button) {
-  const itemCategory = $(button).parent().siblings('.listItemCategory').attr('data-item-category')
+  // const itemCategory = $(button).parent().siblings('.listItemCategory').attr('data-item-category')
+  const element = $(button).parent().prev().children()[2]
+  const itemCategory = $(element).attr('data-item-category')
   return itemCategory
 }
 
 const getItemRating = function (button) {
-  const itemRating = $(button).parent().siblings('.listItemRating').attr('data-item-rating')
+  // const itemRating = $(button).parent().siblings('.listItemRating').attr('data-item-rating')
+
+  const element = $(button).parent().prev().children()[3]
+  const itemRating = $(element).attr('data-item-rating')
   return itemRating
+}
+
+const getItemStatus = function (button) {
+  const element = $(button).parent().prev().children()[4]
+  const itemStatus = $(element).attr('data-item-status')
+  console.log('Item Status is ', itemStatus)
+  return itemStatus
 }
 
 // const getItemName = function (button) {
@@ -77,6 +96,7 @@ const getCurrentData = function (editButton) {
   const itemLocation = getItemLocation(editButton)
   const itemCategory = getItemCategory(editButton)
   const itemRating = getItemRating(editButton)
+  const itemStatus = getItemStatus(editButton)
   // const itemName = $(editButton).attr('data-item-name')
   // console.log('this is', this)
   // const itemLocation = $(this).attr('data-item-location')
@@ -126,6 +146,9 @@ const onUpdateItem = function (event) {
 
 const addHandlers = function () {
   // $('#').on('click', onGetBucketList)
+  $('.add-item-btn').on('click', function () {
+    $('.message-form').html('')
+  })
   $('#add-listitem').on('submit', onPostBucketList)
   $('#listcontent').on('click', '.remove-button', onDeleteItem)
   $('#listcontent').on('click', '.edit-button', getData)
