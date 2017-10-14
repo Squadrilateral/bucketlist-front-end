@@ -72,7 +72,7 @@ const signOutSuccess = function (data) {
   $('.centered').show()
   $('#yelp-search').hide()
   $('#search-content').text('')
-    $('.bucket-image').hide()
+  $('.bucket-image').show()
 }
 
 const signOutFailure = function () {
