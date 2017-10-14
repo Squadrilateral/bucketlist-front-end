@@ -10,6 +10,7 @@
 
   <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
@@ -59,8 +60,10 @@
   </div>
 
     <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-list container'>
+      <div class="add-listitem-btn">
       <button class="add-item-btn btn-primary" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button>
-      <br>
+    </div>
+      <!-- <br> -->
       <!-- <div class="add-listitem-message">
       </div> -->
       <!-- <form id="add-listitem">
@@ -74,7 +77,7 @@
         </fieldset>
       </form> -->
       <br>
-      <div id="listcontent">
+      <div id="listcontent" class="container-list-content">
 
         <!-- test -->
         <!-- <div class="col-6 box-item">
@@ -105,6 +108,8 @@
         <!-- test end -->
       </div>
     </div>
+<!-- <div class="container-break col-lg-6 ">
+</div> -->
 
 
     <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-yelp container'>
@@ -112,8 +117,8 @@
       <div id="yelp">
         <form id="yelp-search">
           <fieldset>
-            <input type="text" name="term" value="" placeholder="Name">
-            <input type="text" name="location" value="" placeholder="Location">
+            <input class="search-input" type="text" name="term" value="" placeholder="Name">
+            <input class="search-input" type="text" name="location" value="" placeholder="Location">
             <button class="btn-primary" type="submit" name="submit">Search Yelp!</button>
           </fieldset>
         </form>

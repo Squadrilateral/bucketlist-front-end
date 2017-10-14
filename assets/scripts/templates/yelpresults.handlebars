@@ -1,7 +1,7 @@
 {{#each yelpresults as |result|}}
 <div class="col-6 box-yelp-result">
   <div class="col-3 pull-left container-reult-pic">
-    <img class="yelpImage" src="{{result.image_url}}" style="width:128px;height:128px;"></img>
+    <img class="yelpImage" style="width:144px;height:144px;" src="{{result.image_url}}"></img>
   </div>
   <div class="col-3 pull-left container-result-info" data-id="{{result.id}}">
     <div class="resultName" data-item-name="{{result.name}}">Name: {{result.name}}</div>

@@ -9,7 +9,7 @@ const onYelpSearch = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   console.log('on yelp search data is', data)
-  if (data.location.trim().length) {
+  if (data.location.trim().length && data.term.trim().length) {
     $('.yelp-message').html('')
   api.getYelpResults(data)
     // .then((data) => console.log('on yelp search is ', data))
@@ -17,7 +17,7 @@ const onYelpSearch = function (event) {
     .catch(ui.getYelpResultsFailure)
   } else {
     console.log('Location field required for yelp search')
-    $('.yelp-message').html('Location field is required')
+    $('.yelp-message').html('Name and location fields are required')
     $('#search-content').html('')
   }
 }
