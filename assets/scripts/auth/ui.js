@@ -36,6 +36,7 @@ const signInSuccess = function (data) {
   $('#yelp-search').show()
   $('.bucket-image').hide()
   $('.add-item-btn').show()
+  $('.add-bucketList-message').show()
 
   bucketlistEvents.onGetBucketList()
 }
@@ -76,6 +77,7 @@ const signOutSuccess = function (data) {
   $('#search-content').text('')
   $('.bucket-image').show()
   $('.add-item-btn').hide()
+  $('.add-bucketList-message').hide()
 }
 
 const signOutFailure = function () {
