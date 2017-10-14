@@ -2,17 +2,17 @@
 
 Have you ever wanted to have a special place to store your wildest dreams!? Good news, you came to the right place! Our app is specifically designed to allow users to personalize their page by allowing them to store bucket list items and rank them. The first step for new users is to create a personal profile by making a username and password. Once the user is authorized, they are then able to start adding their bucket list items! To add a bucket list item, users will need to fill out the appropriate fields on the page including (name, location, category and rating). Once the form is submitted, the user is then greeted by seeing their new list item displayed on the page. If a user wishes to delete or update an existing bucket list item, they can do that by clicking the appropriate buttons next to the item. Bucket list items are specific to the the authorized user, so only authorized users can see their specific list items. HAPPY BUCKET LISTING!
 
-## [Link to Backend-Api Repo] (https://github.com/Squadrilateral/bucketlist-api)
-## [Link to Backend-Api Deployed Site] (https://stormy-stream-35182.herokuapp.com/)
+## Link to Backend-Api Repo: https://github.com/Squadrilateral/bucketlist-api
+## Link to Backend-Api Deployed Site: https://stormy-stream-35182.herokuapp.com/
 
 ## Planning
 
-At the start of the project on Wednesday morning we decided that a team stand-up would the best way to begin. By brainstorming ideas and talking through some of the tougher issues, we put ourselves in a great place to begin organizing and designing our application. We white boarded our wireframes, ERD and user stories which can be seen below in the attached links.
+At the start of the project on Wednesday morning we decided that a team stand-up would the best way to begin. By brainstorming ideas and talking through some of the tougher issues, we put ourselves in a great place to begin organizing and designing our application. We white boarded our wi reframes, ERD and user stories which can be seen below in the attached links.
 
 ## User Stories, Wireframe & ERD
 
-## [Link to Wireframe] ()
-## [Link to ERD] ()
+## Link to Wireframe: https://i.imgur.com/AN5UbQU.jpg
+## Link to ERD: https://i.imgur.com/LBjiLri.jpg
 
 - User can sign up to make new account
 - User can sign-in to their personal account.
@@ -47,26 +47,30 @@ By day 2 we were making progress and agreed to incorporate a stretch goal by att
 
 ## Technologies Used
 
--Javascript
--JQuery
--Ajax
--Express
--MongoDB
--Mongoose
--Yelp Fusion API
--Handlebars
--HTML
--CSS
+- Javascript
+- JQuery
+- Ajax
+- Express
+- MongoDB
+- Mongoose
+- Yelp Fusion API
+- Handlebars
+- Bootstrap
+- HTML
+- CSS
 
 
 ## Resources Used
 
--Class Notes
--Consultants
--Team Squadrilateral
--MDN
--ATOM
--Github
--Stack Overflow
+- Class Notes
+- MDN
+- ATOM
+- Github
+- Stack Overflow
+- Yelp Api Documentation 
 
-## Unsolved Problems
+## Future Plans
+
+As a group, future plans would include adding social features to our application
+so you can follow other users. Also, adding photos and including a
+category for completed bucket list items.
