@@ -18,8 +18,7 @@
 </head>
 
 <body class="container-fluid">
-  <!-- <div class="header-message">
-  </div> -->
+
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <!-- <header> -->
@@ -45,22 +44,15 @@
             </ul>
           </li>
         </ul>
-
-        <!-- <button type="button" id="btn-sign-up" class="btn btn-primary navbar-btn btn-auth" data-toggle="modal" data-target="#modal-sign-up">Sign Up</button>
-          <button type="button" id="btn-sign-in" class="btn btn-primary navbar-btn btn-auth" data-toggle="modal" data-target="#modal-sign-in">Sign In</button>
-          <button type="button" id="btn-change-password" class="btn btn-primary navbar-btn btn-auth" data-toggle="modal" data-target="#modal-change-password">Change Password</button>
-          <button type="button" id="btn-sign-out" class="btn btn-primary navbar-btn">Sign Out</button> -->
-        <!-- </ul> -->
       </div>
     </div>
   </nav>
 
   <h1>My Bucket List</h1>
 <br>
-  <!-- <div style="text-align: center"> -->
 
   <div class="bucket-image">
-    <!-- <img src="https://blog.vitalchek.com/wp-content/uploads/2016/06/iStock_67942361_LARGE.jpg" class="centered" height="500" width="650"> -->
+
   </div>
 
     <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-list container'>
@@ -70,53 +62,14 @@
       <div class="add-bucketList-message"></div>
     </div>
     </div>
-      <!-- <br> -->
-      <!-- <div class="add-listitem-message">
-      </div> -->
-      <!-- <form id="add-listitem">
-        <fieldset>
-          <input type="hidden" name="listitem[id]" value="">
-          <input type="text" id="listItemName" name="listitem[name]" value="" placeholder="Name">
-          <input type="text" id="listItemLocation" name="listitem[location]" value="" placeholder="Location">
-          <input type="text" name="listitem[category]" value="" placeholder="Category">
-          <input class="rating-input-box" type="number" max=5 min=0 name="listitem[rating]" value="" placeholder="Rating (1-5)">
-          <input type="submit" name="submit" value="Add a Bucket List item!">
-        </fieldset>
-      </form> -->
+    <div class="tg-list-item">
+    <input class="tgl tgl-flip" id="cb5" type="checkbox"/>
+    <label class="tgl-btn" id="incomplete-button" data-tg-off="Incomplete" data-tg-on="Completed" for="cb5"></label>
+  </div>
       <br>
       <div id="listcontent" class="container-list-content">
-
-        <!-- test -->
-        <!-- <div class="col-6 box-item">
-          <div class="col-3 pull-left" data-id="{{listitem.id}}">
-            <div class="listItemName" data-item-name="{{listitem.name}}">Name: {{listitem.name}}</div>
-            <div class="listItemLocation" data-item-location="{{listitem.location}}">Location: {{listitem.location}}</div>
-            <div class="listItemCategory" data-item-category="{{listitem.category}}">Category: {{listitem.category}}</div>
-            <div class="listItemRating" data-item-rating="{{listitem.rating}}">Rating: {{listitem.rating}}</div>
-          </div>
-          <div class="col-3 pull-right container-item-btn">
-            <button class='remove-button'>Remove</button>
-            <button class="edit-button" data-toggle="modal" data-target="#modal-edit">Edit</button>
-          </div>
-        </div>
-
-        <div class="col-6 box-item">
-          <div class="col-3 pull-left" data-id="{{listitem.id}}">
-            <div class="listItemName" data-item-name="{{listitem.name}}">Name: {{listitem.name}}</div>
-            <div class="listItemLocation" data-item-location="{{listitem.location}}">Location: {{listitem.location}}</div>
-            <div class="listItemCategory" data-item-category="{{listitem.category}}">Category: {{listitem.category}}</div>
-            <div class="listItemRating" data-item-rating="{{listitem.rating}}">Rating: {{listitem.rating}}</div>
-          </div>
-          <div class="col-3 pull-right container-item-btn">
-            <button class='remove-button'>Remove</button>
-            <button class="edit-button" data-toggle="modal" data-target="#modal-edit">Edit</button>
-          </div>
-        </div> -->
-        <!-- test end -->
       </div>
     </div>
-<!-- <div class="container-break col-lg-6 ">
-</div> -->
 
 
     <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-yelp container'>
@@ -124,7 +77,7 @@
       <div id="yelp">
         <form id="yelp-search">
           <fieldset>
-            <input class="search-input" type="text" name="term" value="" placeholder="Name">
+            <input class="search-input" type="text" name="term" value="" placeholder="Activity">
             <input class="search-input" type="text" name="location" value="" placeholder="Location">
             <button class="btn-primary add-item-btn" type="submit" name="submit">Search Yelp!</button>
           </fieldset>
@@ -133,36 +86,6 @@
       </div>
       <br>
       <div id="search-content" class="container-yelp-result">
-        <!-- test -->
-        <!-- <div class="col-6 box-yelp-result">
-          <div class="col-3 pull-left container-result-pic">
-            <img class="yelpImage" src="{{result.image_url}}" style="width:128px;height:128px;"></img>
-          </div>
-          <div class="col-3 pull-left container-result-info" data-id="{{result.id}}">
-            <div class="resultName" data-item-name="{{result.name}}">Name: {{result.name}}</div>
-            <div class="resultLocation" data-item-location="{{result.location.city}}">Location: {{result.location.city}}</div>
-            <div><a href="{{result.url}}">Visit Site: {{result.name}}</a></div>
-            <br>
-            <div><button class="add-result-button" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button></div>
-          </div>
-        </div>
-
-        <div class="col-6 box-yelp-result">
-          <div class="col-3 pull-left container-result-pic">
-            <img class="yelpImage" src="{{result.image_url}}" style="width:128px;height:128px;"></img>
-          </div>
-          <div class="col-3 pull-left container-result-info" data-id="{{result.id}}">
-            <div class="resultName" data-item-name="{{result.name}}">Name: {{result.name}}</div>
-            <div class="resultLocation" data-item-location="{{result.location.city}}">Location: {{result.location.city}}</div>
-            <div><a href="{{result.url}}">Visit Site: {{result.name}}</a></div>
-            <br>
-            <div><button class="add-result-button" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button></div>
-          </div>
-        </div> -->
-
-
-
-        <!-- test end -->
       </div>
     </div>
 
@@ -262,17 +185,6 @@
       </div>
     </div>
   </div>
-  <!-- </div> -->
-  <!-- <form id="edit-listitem">
-    <fieldset>
-      <input type="hidden" name="listitem[id]" value="">
-      <input type="text" name="listitem[name]" value="" placeholder="Name">
-      <input type="text" name="listitem[location]" value="" placeholder="Location">
-      <input type="text" name="listitem[category]" value="" placeholder="Category">
-      <input type="text" name="listitem[rating]" value="" placeholder="Rating (1-5)">
-      <input type="submit" name="submit" value="Edit a Bucket List item!">
-    </fieldset>
-  </form> -->
 
   <!-- modal edit -->
   <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
@@ -349,5 +261,8 @@
     </div>
   </div>
 </body>
+<footer>
+  <h4><a target=“_blank” href="https://github.com/Squadrilateral"><img id="squad" src="https://i.imgur.com/m0n6h6r.jpg" style="title=" source:"imgur.com"/></a>Created By Team Squadrilateral 2017</h4>
+</footer>
 
 </html>

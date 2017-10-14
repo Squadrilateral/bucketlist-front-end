@@ -117,6 +117,7 @@ const getCurrentData = function (editButton) {
   $('#input-location').val(itemLocation)
   $('#input-category').val(itemCategory)
   $('#input-rating').val(itemRating)
+  $('#ratingSelect1').val(itemStatus)
   // debugger
   // $('#modal-edit').modal('show')
   // console.log('itemData is', itemData)
@@ -135,6 +136,39 @@ const getData = function (event) {
   $('#edit-listitem').on('submit', onUpdateItem)
 }
 
+let isChecked = $('#incomplete-button').is(':checked')
+
+const getStatus = function (event) {
+  console.log(event.target)
+  console.log('event.target.checked is ', $(event.target).is(':checked'))
+  const onClick = function () {
+    if (isChecked) {
+      isChecked = false
+      store.status = 'Incomplete'
+      console.log('ischecked is', isChecked)
+    } else {
+      isChecked = true
+      store.status = 'Completed ✅'
+      console.log('ischecked is second log', isChecked)
+    }
+    return isChecked
+  }
+  onClick()
+  onGetBucketList()
+  console.log('isChecked after ', isChecked)
+}
+
+  // console.log('checked? ', $(event.target).is(':checked'))
+  // if ($(event.target).is(':checked')) {
+  //   console.log('incomplete')
+  //   store.status = 'incomplete'
+  // } else {
+  //   console.log('complete')
+  //   store.status = 'complete'
+  // }
+  // onGetBucketList()
+
+
 const onUpdateItem = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -145,13 +179,13 @@ const onUpdateItem = function (event) {
 }
 
 const addHandlers = function () {
-  // $('#').on('click', onGetBucketList)
   $('.add-item-btn').on('click', function () {
     $('.message-form').html('')
   })
   $('#add-listitem').on('submit', onPostBucketList)
   $('#listcontent').on('click', '.remove-button', onDeleteItem)
   $('#listcontent').on('click', '.edit-button', getData)
+  $('#incomplete-button').on('click', getStatus)
 }
 
 module.exports = {
