@@ -1,41 +1,157 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+$font-main: 'Josefin Sans', sans-serif;
+$font-size-main: 20px;
 
+.add-result-button {
+  margin-top: 3px;
+}
+body {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: $font-size-main;
+}
+.box-item {
+  // border-bottom: solid;
+  height: 131px;
+  width: 100%;
+}
+.box-yelp-result {
+  height: 208px;
+  width: 80%;
+}
+.btn-primary {
+height: 30px;
+font-size: $font-size-main;
+}
 
 .break {
   margin-bottom: 6px;
 }
-.centered {
-  position: relative;
+
+.bucket-image {
+  content:url('https://i.imgur.com/34fBKAn.jpg');
+  margin: auto;
+  width: 50%;
 }
-.container-yelp {
+// .centered {
+//   position: relative;
+// }
+.container {
+  padding-left: 4%;
+  // border-style: solid;
+}
+.container-break {
+  height: 10px;
+}
+.container-list {
+  // padding-left: 2%;
+
+}
+
+.container-list-content {
   overflow-y: scroll;
-  height: 500px;
+  height: 450px;
+  font-size: $font-size-main;
 }
+.container-item-btn {
+  // margin-top: 7%;
+  // margin-right: 21%;
+}
+.container-result-info {
+  margin-left: 3%;
+}
+
+// .container-yelp {
+//   padding-right: 2%;
+// }
+.container-yelp-result {
+  overflow-y: scroll;
+  height: 450px;
+  font-size: $font-size-main;
+}
+
 h1 {
   text-align: center;
   font-family: 'Tangerine';
-  font-size: 80px
+  font-size: 80px;
 }
-li {
-  clear: both;
-  list-style: none;
-  font-family: monospace;
+
+// li {
+//   // clear: both;
+//   list-style: none;
+//   // font-family: monospace;
+// }
+.message-form {
+  color: red;
 }
+.modal-header{
+  font-size: $font-size-main;
+}
+
+// .navbar-nav {
+//   font-size:
+// }
 .navbar-header {
   color: white;
 }
 
-.rating-input-box {
-  width: 10%;
+// .rating-input-box {
+//   width: 15%;
+// }
+.search-input {
+  height: 30px;
+  font-size: 20px;
 }
 
-.yelpImage {
-  clear: both;
-  float: right;
-  margin-bottom: 50px;
+.yelpImage {
+ border-radius: 23px;
+//  width: 144px;
+// height: 144px;
+ margin-bottom: 50px;
+}
+
+.yelp-message {
+  color: red;
 }
 
 #yelp-search {
   display: none;
 }
+
+// .centered {
+// position : relative;
+// }
+// .container {
+// padding-left : 4%;
+// }
+// .container-break {
+// height : 10px;
+// }
+// .container-result-info {
+// margin-left : 3%;
+// }
+// h1 {
+// text-align : center;
+// font-family : 'Tangerine';
+// font-size : 80px;
+// }
+// .message-form {
+// color : red;
+// }
+// .navbar-header {
+// color : white;
+// }
+// .search-input {
+// height : 30px;
+// font-size : 20px;
+// }
+// .yelp-message {
+// color : red;
+// }
+// #yelp-search {
+// display : none;
+// }
+//
+// .yelpImage {
+//   border-radius: 23px;
+// }
