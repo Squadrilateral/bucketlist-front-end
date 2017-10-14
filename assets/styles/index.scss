@@ -1,26 +1,65 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.add-result-button {
+  margin-top: 14%;
+}
 
+.box-item {
+  // border-bottom: solid;
+  height: 100px;
+  width: 80%;
+}
+.box-yelp-result {
+  height: 178px;
+  width: 80%;
+}
 .break {
   margin-bottom: 6px;
+}
+.bucket-image {
+  content:url('https://i.imgur.com/34fBKAn.jpg');
+  margin: auto;
+  width: 50%;
 }
 .centered {
   position: relative;
 }
-.container-yelp {
+.container {
+  padding-left: 4%;
+}
+.container-list {
+  // padding-left: 2%;
+}
+
+.container-item-btn {
+  // margin-top: 7%;
+  // margin-right: 21%;
+}
+.container-result-info {
+  margin-left: 3%;
+}
+
+// .container-yelp {
+//   padding-right: 2%;
+// }
+.container-yelp-result {
   overflow-y: scroll;
   height: 500px;
 }
+
 h1 {
   text-align: center;
   font-family: 'Tangerine';
   font-size: 80px
 }
 li {
-  clear: both;
+  // clear: both;
   list-style: none;
   font-family: monospace;
+}
+.message-form {
+  color: red;
 }
 .navbar-header {
   color: white;
@@ -29,11 +68,13 @@ li {
 .rating-input-box {
   width: 10%;
 }
-
 .yelpImage {
-  clear: both;
-  float: right;
+  // clear: both;
+  // float: right;
   margin-bottom: 50px;
+}
+.yelp-message {
+  color: red;
 }
 
 #yelp-search {

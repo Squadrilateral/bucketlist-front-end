@@ -1,12 +1,14 @@
 {{#each listitems as |listitem|}}
-<ul data-id="{{listitem.id}}">
-  <li class="listItemName" data-item-name="{{listitem.name}}">Name: {{listitem.name}}</li>
-  <li class="listItemLocation" data-item-location="{{listitem.location}}">Location: {{listitem.location}}</li>
-  <li class="listItemCategory" data-item-category="{{listitem.category}}">Category: {{listitem.category}}</li>
-  <li class="listItemRating"data-item-rating="{{listitem.rating}}">Rating: {{listitem.rating}}</li>
-  <li><button class='remove-button'>Remove</button></li>
-  <li><button  class="edit-button" data-toggle="modal" data-target="#modal-edit">Edit</button></li>
-
-  <!-- <li><button class='edit-button'>Edit</button></li> -->
-</ul>
+  <div class="col-6 box-item">
+    <div class="col-3 pull-left" data-id="{{listitem.id}}">
+      <div class="listItemName" data-item-name="{{listitem.name}}">Name: {{listitem.name}}</div>
+      <div class="listItemLocation" data-item-location="{{listitem.location}}">Location: {{listitem.location}}</div>
+      <div class="listItemCategory" data-item-category="{{listitem.category}}">Category: {{listitem.category}}</div>
+      <div class="listItemRating" data-item-rating="{{listitem.rating}}">Rating: {{listitem.rating}}</div>
+    </div>
+    <div class="col-3 pull-right container-item-btn">
+      <button class='remove-button'>Remove</button>
+      <button class="edit-button" data-toggle="modal" data-target="#modal-edit">Edit</button>
+    </div>
+  </div>
 {{/each}}
