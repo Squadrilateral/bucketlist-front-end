@@ -77,6 +77,7 @@ const signOutSuccess = function (data) {
   $('#incomplete-button').hide()
   $('.container-list').hide()
   $('.container-yelp').hide()
+  $('.yelp-message').html('')
 }
 
 const signOutFailure = function () {

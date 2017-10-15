@@ -6,13 +6,29 @@ const ui = require('./ui')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
+  let isMatchPasswords
+  let allFilledIn
   clearMessage()
-  if (data.credentials.password.trim().length) {
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    // $('.message-form').text('Your passwords do not match. Please try again.')
+    isMatchPasswords = false
+  } else {
+    isMatchPasswords = true
+  }
+
+  if (data.credentials.email.trim().length && data.credentials.password.trim().length && data.credentials.password_confirmation.trim().length) {
+    allFilledIn = true
+  } else {
+    allFilledIn = false
+    // $('.message-form').text('All fields are required.')
+  }
+
+  if (allFilledIn && isMatchPasswords) {
     api.signUp(data)
       .then(ui.signUpSuccess)
       .catch(ui.signUpFailure)
   } else {
-    $('.message-form').text('Please enter a password.')
+    $('.message-form').text('Error on sign up')
   }
 }
 
@@ -29,9 +45,13 @@ const onChangePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   clearMessage()
-  api.changePassword(data)
-    .then(ui.changePasswordSuccess)
-    .catch(ui.changePasswordFailure)
+  if (data.passwords.old.trim().length && data.passwords.new.trim().length) {
+    api.changePassword(data)
+      .then(ui.changePasswordSuccess)
+      .catch(ui.changePasswordFailure)
+  } else {
+    $('.message-form').text('All fields are required.')
+  }
 }
 
 const onSignOut = function (event) {
