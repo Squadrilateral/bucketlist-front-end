@@ -6,9 +6,11 @@ const getBucketListSuccess = function (data) {
   store.listitems = data.listitems
   if (store.listitems.length === 0) {
     $('.add-bucketList-message').html('Your bucket is empty. Please add items.')
+    $('#incomplete-button').hide()
   } else {
     const newList = store.listitems.filter(item => item.status === store.status)
     const showListHTML = showList({ listitems: newList })
+    $('#incomplete-button').show()
     $('#listcontent').html(showListHTML)
     $('.add-listitem-message').html('')
     $('.add-bucketList-message').html('')
