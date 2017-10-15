@@ -21,7 +21,6 @@
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-      <!-- <header> -->
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
       <span class="sr-only">Toggle navigation</span>
@@ -49,47 +48,47 @@
   </nav>
 
   <h1>My Bucket List</h1>
-<br>
+  <br>
 
   <div class="bucket-image">
   </div>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-list container'>
-      <div class="add-listitem-btn">
-      <button class="add-item-btn btn-primary" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button>
+  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-list container'>
+    <div class="add-listitem-btn">
+      <div class="list-container-btn">
+        <div class="add-btn">
+        <button class="add-item-btn btn-primary" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button>
+      </div>
+        <input class="tgl tgl-flip" id="cb5" type="checkbox" />
+        <label class="tgl-btn" id="incomplete-button" data-tg-off="Incomplete" data-tg-on="Completed" for="cb5"></label>
+    </div>
       <div class="break">
-      <div class="add-bucketList-message"></div>
+        <div class="add-bucketList-message"></div>
+      </div>
     </div>
+
+    <br>
+    <div id="listcontent" class="container-list-content">
     </div>
-    <div class="tg-list-item">
-    <input class="tgl tgl-flip" id="cb5" type="checkbox"/>
-    <label class="tgl-btn" id="incomplete-button" data-tg-off="Incomplete" data-tg-on="Completed" for="cb5"></label>
   </div>
-      <br>
-      <div id="listcontent" class="container-list-content">
-      </div>
+  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-yelp container'>
+    <div id="yelp">
+      <form id="yelp-search">
+        <fieldset>
+          <input class="search-input" type="text" name="term" value="" placeholder="Activity">
+          <input class="search-input" type="text" name="location" value="" placeholder="Location">
+          <button class="btn-primary add-item-btn" type="submit" name="submit">Search Yelp!</button>
+        </fieldset>
+      </form>
+      <div class="yelp-message"></div>
     </div>
-    <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-yelp container'>
-      <!-- <br> -->
-      <div id="yelp">
-        <form id="yelp-search">
-          <fieldset>
-            <input class="search-input" type="text" name="term" value="" placeholder="Activity">
-            <input class="search-input" type="text" name="location" value="" placeholder="Location">
-            <button class="btn-primary add-item-btn" type="submit" name="submit">Search Yelp!</button>
-          </fieldset>
-        </form>
-        <div class="yelp-message"></div>
-      </div>
-      <br>
-      <div id="search-content" class="container-yelp-result">
-      </div>
+    <br>
+    <div id="search-content" class="container-yelp-result">
     </div>
-    <div class="col-12 footer">
-      <!-- <div class="12"> -->
-        <a target=“_blank” href="https://github.com/Squadrilateral"><img id="squad" src="https://i.imgur.com/m0n6h6r.jpg" style="title=" source:"imgur.com"/></a>
-        <p>Created By Team Squadrilateral 2017</p>
-      <!-- </div> -->
-    </div>
+  </div>
+  <div class="col-12 footer">
+    <a target=“_blank” href="https://github.com/Squadrilateral"><img id="squad" src="https://i.imgur.com/m0n6h6r.jpg" style="title=" source:"imgur.com"/></a>
+    <p>Created By Team Squadrilateral 2017</p>
+  </div>
   <!-- Modal auth -->
   <!-- modal sign up -->
   <div class="modal fade" id="modal-sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
@@ -260,4 +259,5 @@
     </div>
   </div>
 </body>
+
 </html>

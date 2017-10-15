@@ -56,8 +56,6 @@ body {
   font-size: $font-size-main;
 }
 .box-item {
-  // border-bottom: solid;
-  // height: 177px;
   height: 154px;
   width: 100%;
   border: 3px solid black;
@@ -83,35 +81,25 @@ font-size: $font-size-main;
   width: 400px;
   height: 400px;
 }
-// .centered {
-//   position: relative;
-// }
+
 .container {
   padding-left: 2%;
-  // border-style: solid;
+  margin-bottom: 20px;
 }
 .container-break {
   height: 10px;
 }
-.container-list {
-  // padding-left: 2%;
-}
+
 .container-list-content {
   overflow-y: scroll;
   height: 450px;
   font-size: $font-size-main;
+  // border-style: solid;
 }
-.container-item-btn {
-  // margin-top: 7%;
-  // margin-right: 21%;
-}
+
 .container-result-info {
   margin-left: 3%;
 }
-
-// .container-yelp {
-//   padding-right: 2%;
-// }
 
 .container-result-pic .yelpImage {
   height: 144px;
@@ -122,6 +110,8 @@ font-size: $font-size-main;
   overflow-y: scroll;
   height: 450px;
   font-size: $font-size-main;
+  margin-top: -28px;
+  // border-style: solid;
 }
 .edit-button {
  background-color: #1677ab ;
@@ -136,12 +126,10 @@ h1 {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 80px;
 }
+.list-container-btn {
+  height: 25px;
+}
 
-// li {
-//   // clear: both;
-//   list-style: none;
-//   // font-family: monospace;
-// }
 img#squad {
   height: 50px;
   width: 50px;
@@ -156,16 +144,10 @@ display: block;
   font-size: $font-size-main;
 }
 
-// .navbar-nav {
-//   font-size:
-// }
 .navbar-header {
   color: white;
 }
 
-// .rating-input-box {
-//   width: 15%;
-// }
 .remove-button {
  background-color: #e82727 ;
  border-radius: 23px;
@@ -181,6 +163,7 @@ display: block;
 }
 .yelp-message {
   color: red;
+  height: 29px;
 }
 
 #yelp-search {
@@ -203,9 +186,13 @@ display: block;
 	display: flex;
 	align-items: center;
 }
+.add-btn {
+  float: left;
+  margin-right: 9px;
+}
 
-.tg-list-item {
-	margin: 0 2em;
+.tgl-btn {
+  display: inline;
 }
 
 .tgl {
@@ -226,16 +213,17 @@ display: block;
 
 	+ .tgl-btn {
 		outline: 0;
-		display: block;
+		// display: block;
 		width: 10em;
 		height: 2em;
-		position: relative;
+		// position: relative;
+    margin-top: -1px;
 		cursor: pointer;
     user-select: none;
 		&:after,
     &:before {
 			position: relative;
-			display: block;
+			// display: block;
 			content: "";
 			width: 50%;
 			height: 100%;
