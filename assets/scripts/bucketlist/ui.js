@@ -2,37 +2,12 @@ const store = require('../store')
 const showList = require('../templates/listitems.handlebars')
 const api = require('./api')
 
-// const getBucketListSuccess = function (data) {
-//   store.listitems = data.listitems
-//   if (data.listitems.length === 0) {
-//     console.log('data.listitems.length is', data.listitems.length)
-//     $('.add-bucketList-message').html('Your bucket is empty. Please add items.')
-//   } else {
-//     const showListHTML = showList({ listitems: store.listitems })
-//     $('#listcontent').html(showListHTML)
-//     $('.add-listitem-message').html('')
-//     $('.add-bucketList-message').html('')
-//   }
-// }
-// const newList = []
-
 const getBucketListSuccess = function (data) {
   store.listitems = data.listitems
-  console.log('store list items is', store.listitems)
   if (store.listitems.length === 0) {
     $('.add-bucketList-message').html('Your bucket is empty. Please add items.')
   } else {
     const newList = store.listitems.filter(item => item.status === store.status)
-    console.log('store.status is ', store.status)
-    console.log('newList is ', newList)
-    //   function (item) {
-    //   console.log('item.status is ', item.status)
-    //   console.log('store.status is ', store.status)
-    //   if (item.status === store.status) {
-    //     // console.log(item.status)
-    //     newList.push(item)
-    //   }
-    // })
     const showListHTML = showList({ listitems: newList })
     $('#listcontent').html(showListHTML)
     $('.add-listitem-message').html('')
@@ -40,8 +15,8 @@ const getBucketListSuccess = function (data) {
   }
 }
 
-const getBucketListFailure = function (error) {
-  console.error(error)
+const getBucketListFailure = function () {
+  $('.add-bucketList-message').html('Error. Please try again.')
 }
 
 const postBucketListSuccess = function (data) {
@@ -52,8 +27,8 @@ const postBucketListSuccess = function (data) {
     .catch(getBucketListFailure)
 }
 
-const postBucketListFailure = function (error) {
-  console.error(error)
+const postBucketListFailure = function () {
+  $('.add-bucketList-message').html('Error. Please try again.')
 }
 
 const deleteItemSuccess = function (deleteButton) {
@@ -63,8 +38,8 @@ const deleteItemSuccess = function (deleteButton) {
     .catch(getBucketListFailure)
 }
 
-const deleteItemFailure = function (error) {
-  console.error(error)
+const deleteItemFailure = function () {
+  $('.add-bucketList-message').html('Error. Please try again.')
 }
 
 const updateItemSuccess = function (data) {
@@ -75,8 +50,8 @@ const updateItemSuccess = function (data) {
     .catch(getBucketListFailure)
 }
 
-const updateItemFailure = function (error) {
-  console.error(error)
+const updateItemFailure = function () {
+  $('.add-bucketList-message').html('Error. Please try again.')
 }
 
 module.exports = {

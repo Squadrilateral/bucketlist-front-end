@@ -3,8 +3,6 @@ const store = require('../store')
 const bucketlistEvents = require('../bucketlist/events')
 
 const signUpSuccess = function (data) {
-  // store.user = data.user
-  // store.token = data.user.token
   $('.message-form').html('Successfully signed up. Please log in!')
   clearForm()
 }
@@ -14,8 +12,6 @@ const signUpFailure = function () {
 
 const signInSuccess = function (data) {
   store.user = data.user
-  console.log('store.user.token is in sign in success ', store.user.token)
-  // store.token = data.user.token
   store.isSignedIn = true
   store.status = 'Incomplete'
   clearForm()
@@ -24,7 +20,6 @@ const signInSuccess = function (data) {
   $('.content').css('display', 'none')
   $('.message-form').html('Successfully signed in')
   $('#account').modal('hide')
-  // listEvents.getLists()
   $('.create-list-btn').show()
   $('#modal-sign-in').modal('hide')
   $('.message-form').html('')
@@ -42,8 +37,7 @@ const signInSuccess = function (data) {
   bucketlistEvents.onGetBucketList()
 }
 
-const signInFailure = function (error) {
-  console.error(error)
+const signInFailure = function () {
   $('.message-form').html('Error on sign in')
   clearForm()
 }
