@@ -45,8 +45,8 @@ const clearMessage = function () {
   $('#email-address').val('')
   $('#password').val('')
   $('#password-confirmation').val('')
-  $('#email-address').val('')
-  $('#password').val('')
+  $('#email-address-sign-in').val('')
+  $('#password-sign-in').val('')
   $('#old-password').val('')
   $('#new-password').val('')
 }
