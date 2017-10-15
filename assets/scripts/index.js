@@ -10,6 +10,8 @@ const yelpEvents = require('./yelp/events')
 
 $(() => {
   setAPIOrigin(location, config)
+  $('.container').hide()
+
   $('.add-item-btn').hide()
   $('#btn-change-password').hide()
   $('#btn-sign-out').hide()

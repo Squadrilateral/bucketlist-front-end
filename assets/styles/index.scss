@@ -80,7 +80,8 @@ font-size: $font-size-main;
 .bucket-image {
   content:url('https://i.imgur.com/34fBKAn.jpg');
   margin: auto;
-  width: 50%;
+  width: 400px;
+  height: 400px;
 }
 // .centered {
 //   position: relative;
@@ -141,6 +142,13 @@ h1 {
 //   list-style: none;
 //   // font-family: monospace;
 // }
+img#squad {
+  height: 50px;
+  width: 50px;
+  margin: auto;
+display: block;
+
+}
 .message-form {
   color: red;
 }
@@ -303,12 +311,15 @@ h1 {
 	}
 }
 #squad {
-  height: 50px;
-  width: 50px;
+
 }
 #incomplete-button {
   display: none;
 }
-footer {
-  text-align: left;
+p {
+  text-align: center;
+}
+.footer {
+margin:auto;
+width: 40%;
 }
