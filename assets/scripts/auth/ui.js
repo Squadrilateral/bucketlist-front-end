@@ -34,6 +34,7 @@ const signInSuccess = function (data) {
   $('.add-item-btn').show()
   $('.add-bucketList-message').show()
   $('#incomplete-button').show()
+  $('.container').show()
   bucketlistEvents.onGetBucketList()
 }
 
@@ -74,6 +75,9 @@ const signOutSuccess = function (data) {
   $('.add-item-btn').hide()
   $('.add-bucketList-message').hide()
   $('#incomplete-button').hide()
+  $('.container-list').hide()
+  $('.container-yelp').hide()
+  $('.yelp-message').html('')
 }
 
 const signOutFailure = function () {
