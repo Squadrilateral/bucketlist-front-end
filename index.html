@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bucket List</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset='utf-8'>
+
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css?family=Handlee" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Tangerine">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body class="container-fluid">
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+
+    </button>
+        <div class="navbar-brand"></div>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#" id="btn-sign-up" class="btn-auth" data-toggle="modal" data-target="#modal-sign-up">Sign Up</a></li>
+              <li><a href="#" id="btn-sign-in" class="btn-auth" data-toggle="modal" data-target="#modal-sign-in">Sign In</a></li>
+              <li><a href="#" id="btn-change-password" class="btn-auth" data-toggle="modal" data-target="#modal-change-password">Change Password</a></li>
+              <li><a href="#" id="btn-sign-out" class="">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1>My Bucket List</h1>
+  <br>
+
+  <div class="bucket-image">
+  </div>
+  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-list container'>
+    <div class="add-listitem-btn">
+      <div class="list-container-btn">
+        <div class="add-btn">
+          <button class="add-item-btn btn-primary" data-toggle="modal" data-target="#modal-add">Add To Bucket List!</button>
+        </div>
+        <input class="tgl tgl-flip" id="cb5" type="checkbox" />
+        <label class="tgl-btn" id="incomplete-button" data-tg-off="Incomplete" data-tg-on="Completed" for="cb5"></label>
+      </div>
+      <div class="break">
+        <div class="add-bucketList-message"></div>
+      </div>
+    </div>
+
+    <br>
+    <div id="listcontent" class="container-list-content">
+    </div>
+  </div>
+  <div class='col-lg-6 col-md-6 col-sm-12 col-xs-12 container-yelp container'>
+    <div id="yelp">
+      <form id="yelp-search">
+        <fieldset>
+          <input class="search-input" type="text" name="term" value="" placeholder="Activity">
+          <input class="search-input" type="text" name="location" value="" placeholder="Location">
+          <button class="btn-primary add-item-btn" type="submit" name="submit">Search Yelp!</button>
+        </fieldset>
+      </form>
+      <div class="yelp-message"></div>
+    </div>
+    <br>
+    <div id="search-content" class="container-yelp-result">
+    </div>
+  </div>
+  <div class="col-12 footer">
+    <p><a target=“_blank” href="https://github.com/Squadrilateral"></a><img id="squad" src="https://i.imgur.com/m0n6h6r.jpg" style="title=" source:"imgur.com">
+      &nbsp;&nbsp;Created By Team Squadrilateral 2017
+    </p>
+  </div>
+  <!-- Modal auth -->
+  <!-- modal sign up -->
+  <div class="modal fade" id="modal-sign-up" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="modal-title" id="exampleModalLabel">Sign Up</div>
+        </div>
+        <form id="sign-up">
+          <div class="modal-body">
+            <div class='message-form'></div>
+
+            <label for="email-address">Email</label>
+            <input id='email-address' class="form-control" type="text" name="credentials[email]" placeholder="Email">
+            <div class="break">
+              <label for='password'>Password</label>
+              <input class="form-control" id="password" type="password" name="credentials[password]" placeholder="Password">
+            </div>
+            <div class="break">
+              <label for="password-confirmation">Password confirmation</label>
+              <input class="form-control" id="password-confirmation" type="password" name="credentials[password_confirmation]" placeholder="Password Confirmation">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign Up">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal in auth -->
+  <div class="modal fade" id="modal-sign-in" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="modal-title" id="exampleModalLabel">Sign In</div>
+        </div>
+        <form id="sign-in">
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <div class="break">
+              <label for="email-address">Email</label>
+              <input class="form-control" id="email-address-sign-in" type="text" name="credentials[email]" placeholder="Email">
+            </div>
+            <div class="break">
+              <label for='password'>Password</label>
+              <input class="form-control" id="password-sign-in" type="password" name="credentials[password]" placeholder="Password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Sign In">Sign In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- </div> -->
+
+  <!-- Modal change password auth -->
+  <div class="modal fade" id="modal-change-password" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          <div class="modal-title" id="exampleModalLabel">Change Password</div>
+        </div>
+        <form id="change-password">
+
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <div class="break">
+              <label for="old-password">Old Password</label>
+              <input class="form-control" id="old-password" type="password" name="passwords[old]" placeholder="Old Password">
+            </div>
+            <div class="break">
+              <label for="new-password">New Password</label>
+              <input class="form-control" id="new-password" type="password" name="passwords[new]" placeholder="New Password">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Change Password!">Change Password</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal edit -->
+  <div class="modal fade" id="modal-edit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="modal-title" id="exampleModalLabel">Edit Item</div>
+        </div>
+        <form id="edit-listitem">
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <label for="item-name">Name</label>
+            <input class="form-control" id="input-item-name" type="text" name="listitem[name]" placeholder="Name">
+            <br>
+            <label for="location">Location</label>
+            <input class="form-control" id="input-location" type="text" name="listitem[location]" placeholder="Location">
+            <br>
+            <label for="category">Category</label>
+            <input class="form-control" id="input-category" type="text" name="listitem[category]" placeholder="Category">
+            <br>
+            <label for="rating">Rating</label>
+            <input class="form-control" id="input-rating" type="number" max=5 min=0 name="listitem[rating]" placeholder="Rating (1-5)">
+            <br>
+            <div class=“dropdown”>
+              <select id="ratingSelect1" class="form-control" type="text" name="listitem[status]">
+                <!--<input class="form-control" id="input-yelp-status" type="text" name="listitem[status]">-->
+                <option >Incomplete</option>
+                <option>Completed ✅</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Add Bucket List Item model -->
+  <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="disply: none;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          <div class="modal-title" id="exampleModalLabel">Add Item to Bucket List</div>
+        </div>
+        <form id="add-yelp-listitem">
+          <div class="modal-body">
+            <div class='message-form'></div>
+            <label for="item-name">Name</label>
+            <input class="form-control" id="input-yelp-item-name" type="text" name="listitem[name]" placeholder="Name">
+            <br>
+            <label for="location">Location</label>
+            <input class="form-control" id="input-yelp-location" type="text" name="listitem[location]" placeholder="Location">
+            <br>
+            <label for="category">Category</label>
+            <input class="form-control" id="input-yelp-category" type="text" name="listitem[category]" placeholder="Category">
+            <br>
+            <label for="rating">Rating</label>
+            <input class="form-control" id="input-yelp-rating" type="number" max=5 min=0 name="listitem[rating]" placeholder="Rating (1-5)">
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary pull-right" name="submit" value="Save">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
