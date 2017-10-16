@@ -73,3 +73,8 @@ By day 2 we were making progress and agreed to incorporate a stretch goal by att
 
 As a group, future plans would include adding social features to our application
 so you can follow other users. Also, users having the ability to add photos of completed bucket list items through AWS.
+
+
+## Contributors
+
+Charlie McQueen, Danny Clark, Charlotte Casner, Phuongnhat Nguyen
