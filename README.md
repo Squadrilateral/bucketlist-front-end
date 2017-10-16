@@ -30,6 +30,8 @@ We tried a couple of different techniques in how to best handle the “group” 
 
 By day 2 we were making progress and agreed to incorporate a stretch goal by attaching Yelp as a 3rd party api. This addition would allow users to search yelps api by name and location and add them to their bucket list. This process proved to be more difficult than originally anticipated, but we eventually broke through and added the yelp resource to our application with success.
 
+One minor issue that we came accross was in our commit messages. The messages themselves were well constructed, but we forgot to add contributors for most of the commits early on. Other than that, everything went smoothly and we all worked very well together!
+
 ## API end-points
 
 | Verb   | URI Pattern            | Controller#Action |
